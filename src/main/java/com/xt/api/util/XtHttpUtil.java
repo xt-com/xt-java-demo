@@ -16,7 +16,7 @@ public class XtHttpUtil {
     private static final String secretKey = "";
     private static final String encry = "HmacSHA256";
     private static final String contentType = "application/json";
-    private static final String baseUrl = "http://sapi.xt.com";
+    private static final String baseUrl = "https://sapi.xt.com";
     private static final String window = "6000";
 
     public static String get(String uri, Map<String, Object> queryMap) {
@@ -34,6 +34,7 @@ public class XtHttpUtil {
         HttpRequest httpRequest = HttpRequest.delete(url);
         config(httpRequest, time + "", signature);
         httpRequest.body(jsonBody);
+        System.out.println("request===="+httpRequest.getMethod()+" "+httpRequest);
         return httpRequest.execute().body();
     }
 
@@ -44,6 +45,7 @@ public class XtHttpUtil {
         HttpRequest httpRequest = HttpRequest.post(url);
         config(httpRequest, time + "", signature);
         httpRequest.body(jsonBody);
+        System.out.println("request===="+httpRequest.getMethod()+" "+httpRequest);
         return httpRequest.execute().body();
     }
 
@@ -69,6 +71,7 @@ public class XtHttpUtil {
             httpRequest = HttpRequest.delete(url);
         }
         config(httpRequest, time + "", signature);
+        System.out.println("request===="+httpRequest.getMethod()+" "+httpRequest);
         return httpRequest.execute().body();
     }
 

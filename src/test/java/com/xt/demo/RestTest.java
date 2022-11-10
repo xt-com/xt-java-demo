@@ -1,6 +1,6 @@
 package com.xt.demo;
 
-import cn.hutool.json.JSONUtil;
+import com.alibaba.fastjson.JSON;
 import com.xt.api.util.XtHttpUtil;
 import org.junit.Test;
 
@@ -18,14 +18,15 @@ public class RestTest {
     public void testpostOrder() {
         String uri = "/v4/order";
         Map<String, Object> param = new HashMap<>();
-        param.put("symbol", "XT_USDT");
+        param.put("symbol", "xt_usdt");
         param.put("side", "BUY");
         param.put("type", "LIMIT");
         param.put("timeInForce", "GTC");
         param.put("bizType", "SPOT");
         param.put("price", 3);
-        param.put("quantity", 2);
-        System.out.println("result====" + XtHttpUtil.post(uri, JSONUtil.toJsonStr(param)));
+        param.put("quantity", 2.0);
+        System.out.println("json===="+ JSON.toJSONString(param));
+        System.out.println("result====" + XtHttpUtil.post(uri,JSON.toJSONString(param)));
     }
 
     @Test
@@ -62,7 +63,7 @@ public class RestTest {
         Map<String, Object> param = new HashMap<>();
         param.put("clientBatchId", "123123111");
         param.put("orderIds", List.of(156201996458139136L, 12312313212L));
-        System.out.println("result====" + XtHttpUtil.deleteWithBody(uri, JSONUtil.toJsonStr(param)));
+        System.out.println("result====" + XtHttpUtil.deleteWithBody(uri, JSON.toJSONString(param)));
     }
 
     @Test
@@ -76,7 +77,7 @@ public class RestTest {
         String uri = "/v4/open-order";
         Map<String, Object> param = new HashMap<>();
         param.put("bizType", "SPOT");
-        System.out.println("result====" + XtHttpUtil.deleteWithBody(uri, JSONUtil.toJsonStr(param)));
+        System.out.println("result====" + XtHttpUtil.deleteWithBody(uri, JSON.toJSONString(param)));
     }
 
     @Test
