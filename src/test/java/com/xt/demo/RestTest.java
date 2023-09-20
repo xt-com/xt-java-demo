@@ -129,13 +129,6 @@ public class RestTest {
     }
 
     @Test
-    public void getToken() {
-        String uri = "/v4/ws-token";
-//        Map<String, Object> param = new HashMap<>();
-        System.out.println("result====" + XtHttpUtil.post(uri, null));
-    }
-
-    @Test
     public void deposit() {
         String uri = "/v4/deposit/address";
         Map<String, Object> param = new HashMap<>();
