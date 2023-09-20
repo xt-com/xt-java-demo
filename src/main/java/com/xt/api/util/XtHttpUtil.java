@@ -1,6 +1,7 @@
 package com.xt.api.util;
 
 import cn.hutool.core.collection.CollectionUtil;
+import cn.hutool.http.GlobalHeaders;
 import cn.hutool.http.HttpRequest;
 import org.apache.commons.codec.digest.HmacUtils;
 
@@ -12,12 +13,15 @@ import java.util.TreeMap;
  * @create 2022/10/28 10:48
  */
 public class XtHttpUtil {
-    private static final String appKey = "";
-    private static final String secretKey = "";
+    private static final String appKey = "35e9d7c1-7579-4f1f-bda9-ba37cab24200";
+    private static final String secretKey = "4919e901b996e7f8adced2690a2d7f89468a4c31";
     private static final String encry = "HmacSHA256";
     private static final String contentType = "application/json";
-    private static final String baseUrl = "https://sapi.xt.com";
+    private static final String baseUrl = "http://sapi.xt-qa.com";
     private static final String window = "6000";
+    static {
+        GlobalHeaders.INSTANCE.clearHeaders();
+    }
 
     public static String get(String uri, Map<String, Object> queryMap) {
         return getOrDel(uri, queryMap, "GET");
