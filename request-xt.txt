@@ -1,13 +1,13 @@
-origion===xt-validate-algorithms=HmacSHA256&xt-validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&xt-validate-recvwindow=6000&xt-validate-timestamp=1666951913345#POST#/v4/order#{"symbol":"XT_USDT","side":"BUY","bizType":"SPOT","quantity":2,"price":3,"type":"LIMIT","timeInForce":"GTC"}
-request====POST Request Url: http://sapi.xt-qa.com/v4/order
+origion===validate-algorithms=HmacSHA256&validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&validate-recvwindow=6000&validate-timestamp=1666951913345#POST#/v4/order#{"symbol":"XT_USDT","side":"BUY","bizType":"SPOT","quantity":2,"price":3,"type":"LIMIT","timeInForce":"GTC"}
+request====POST Request Url: https://sapi.xt.com/v4/order
 Request Headers: 
-    xt-validate-timestamp: 1666951913345
+    validate-timestamp: 1666951913345
     Accept: text/html,application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-    xt-validate-signature: 5f1a20d933088ac83c7f188a4c4155feab76298e18b0dd9350ebbe74344df65f
-    xt-validate-algorithms: HmacSHA256
-    xt-validate-recvwindow: 6000
+    validate-signature: 5f1a20d933088ac83c7f188a4c4155feab76298e18b0dd9350ebbe74344df65f
+    validate-algorithms: HmacSHA256
+    validate-recvwindow: 6000
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool
-    xt-validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
+    validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
     Accept-Encoding: gzip, deflate
     Accept-Language: zh-CN,zh;q=0.8
     Content-Length: 108
@@ -17,16 +17,16 @@ Request Body:
 	
 	
 	
-origion===xt-validate-algorithms=HmacSHA256&xt-validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&xt-validate-recvwindow=6000&xt-validate-timestamp=1666951950607#GET#/v4/order/156201996458139136
-request====GET Request Url: http://sapi.xt-qa.com/v4/order/156201996458139136
+origion===validate-algorithms=HmacSHA256&validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&validate-recvwindow=6000&validate-timestamp=1666951950607#GET#/v4/order/156201996458139136
+request====GET Request Url: https://sapi.xt.com/v4/order/156201996458139136
 Request Headers: 
-    xt-validate-timestamp: 1666951950607
+    validate-timestamp: 1666951950607
     Accept: text/html,application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-    xt-validate-signature: 33c6615cd888361666bb1fca49ce6bef9e2be6dd7aad042d88c3192953ff5eb6
-    xt-validate-algorithms: HmacSHA256
-    xt-validate-recvwindow: 6000
+    validate-signature: 33c6615cd888361666bb1fca49ce6bef9e2be6dd7aad042d88c3192953ff5eb6
+    validate-algorithms: HmacSHA256
+    validate-recvwindow: 6000
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool
-    xt-validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
+    validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
     Accept-Encoding: gzip, deflate
     Accept-Language: zh-CN,zh;q=0.8
     Content-Type: application/json
@@ -34,16 +34,16 @@ Request Body:
     null
 
 
-origion===xt-validate-algorithms=HmacSHA256&xt-validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&xt-validate-recvwindow=6000&xt-validate-timestamp=1666951978728#GET#/v4/order#orderId=156201996458139136
-request====GET Request Url: http://sapi.xt-qa.com/v4/order?orderId=156201996458139136
+origion===validate-algorithms=HmacSHA256&validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&validate-recvwindow=6000&validate-timestamp=1666951978728#GET#/v4/order#orderId=156201996458139136
+request====GET Request Url: https://sapi.xt.com/v4/order?orderId=156201996458139136
 Request Headers: 
-    xt-validate-timestamp: 1666951978728
+    validate-timestamp: 1666951978728
     Accept: text/html,application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-    xt-validate-signature: ad45ab440f168dad8d486f18552f219a84af4a855332d5423a528330909052d2
-    xt-validate-algorithms: HmacSHA256
-    xt-validate-recvwindow: 6000
+    validate-signature: ad45ab440f168dad8d486f18552f219a84af4a855332d5423a528330909052d2
+    validate-algorithms: HmacSHA256
+    validate-recvwindow: 6000
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool
-    xt-validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
+    validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
     Accept-Encoding: gzip, deflate
     Accept-Language: zh-CN,zh;q=0.8
     Content-Type: application/json
@@ -51,16 +51,16 @@ Request Body:
     null
 
 
-origion===xt-validate-algorithms=HmacSHA256&xt-validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&xt-validate-recvwindow=6000&xt-validate-timestamp=1666951993271#DELETE#/v4/order/156201996458139136
-request====DELETE Request Url: http://sapi.xt-qa.com/v4/order/156201996458139136
+origion===validate-algorithms=HmacSHA256&validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&validate-recvwindow=6000&validate-timestamp=1666951993271#DELETE#/v4/order/156201996458139136
+request====DELETE Request Url: https://sapi.xt.com/v4/order/156201996458139136
 Request Headers: 
-    xt-validate-timestamp: 1666951993271
+    validate-timestamp: 1666951993271
     Accept: text/html,application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-    xt-validate-signature: 05f72c3b8b80281430706f505d517c9f3c61cad5bb0a4f29ab9b566e66779f57
-    xt-validate-algorithms: HmacSHA256
-    xt-validate-recvwindow: 6000
+    validate-signature: 05f72c3b8b80281430706f505d517c9f3c61cad5bb0a4f29ab9b566e66779f57
+    validate-algorithms: HmacSHA256
+    validate-recvwindow: 6000
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool
-    xt-validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
+    validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
     Accept-Encoding: gzip, deflate
     Accept-Language: zh-CN,zh;q=0.8
     Content-Type: application/json
@@ -68,16 +68,16 @@ Request Body:
     null
 
 
-origion===xt-validate-algorithms=HmacSHA256&xt-validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&xt-validate-recvwindow=6000&xt-validate-timestamp=1666952015274#GET#/v4/batch-order#orderIds=156201996458139136,12312313212
-request====GET Request Url: http://sapi.xt-qa.com/v4/batch-order?orderIds=156201996458139136,12312313212
+origion===validate-algorithms=HmacSHA256&validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&validate-recvwindow=6000&validate-timestamp=1666952015274#GET#/v4/batch-order#orderIds=156201996458139136,12312313212
+request====GET Request Url: https://sapi.xt.com/v4/batch-order?orderIds=156201996458139136,12312313212
 Request Headers: 
-    xt-validate-timestamp: 1666952015274
+    validate-timestamp: 1666952015274
     Accept: text/html,application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-    xt-validate-signature: a3879af695c690b4a25f9bf5cca0af8605f0a0a49c1bc25c11cae82464981bee
-    xt-validate-algorithms: HmacSHA256
-    xt-validate-recvwindow: 6000
+    validate-signature: a3879af695c690b4a25f9bf5cca0af8605f0a0a49c1bc25c11cae82464981bee
+    validate-algorithms: HmacSHA256
+    validate-recvwindow: 6000
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool
-    xt-validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
+    validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
     Accept-Encoding: gzip, deflate
     Accept-Language: zh-CN,zh;q=0.8
     Content-Type: application/json
@@ -86,16 +86,16 @@ Request Body:
 
 
 
-origion===xt-validate-algorithms=HmacSHA256&xt-validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&xt-validate-recvwindow=6000&xt-validate-timestamp=1666952040890#DELETE#/v4/batch-order#{"orderIds":[156201996458139136,12312313212],"clientBatchId":"123123111"}
-request====DELETE Request Url: http://sapi.xt-qa.com/v4/batch-order
+origion===validate-algorithms=HmacSHA256&validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&validate-recvwindow=6000&validate-timestamp=1666952040890#DELETE#/v4/batch-order#{"orderIds":[156201996458139136,12312313212],"clientBatchId":"123123111"}
+request====DELETE Request Url: https://sapi.xt.com/v4/batch-order
 Request Headers: 
-    xt-validate-timestamp: 1666952040890
+    validate-timestamp: 1666952040890
     Accept: text/html,application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-    xt-validate-signature: 636196fb2ea114798a505043e30bdee6b1c1aeb066d67a768e2210e4959e27bc
-    xt-validate-algorithms: HmacSHA256
-    xt-validate-recvwindow: 6000
+    validate-signature: 636196fb2ea114798a505043e30bdee6b1c1aeb066d67a768e2210e4959e27bc
+    validate-algorithms: HmacSHA256
+    validate-recvwindow: 6000
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool
-    xt-validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
+    validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
     Accept-Encoding: gzip, deflate
     Accept-Language: zh-CN,zh;q=0.8
     Content-Length: 73
@@ -105,16 +105,16 @@ Request Body:
 
 
 
-origion===xt-validate-algorithms=HmacSHA256&xt-validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&xt-validate-recvwindow=6000&xt-validate-timestamp=1666952060915#GET#/v4/open-order
-request====GET Request Url: http://sapi.xt-qa.com/v4/open-order
+origion===validate-algorithms=HmacSHA256&validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&validate-recvwindow=6000&validate-timestamp=1666952060915#GET#/v4/open-order
+request====GET Request Url: https://sapi.xt.com/v4/open-order
 Request Headers: 
-    xt-validate-timestamp: 1666952060915
+    validate-timestamp: 1666952060915
     Accept: text/html,application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-    xt-validate-signature: 450a879a7a0ccb149af95adc4d1450adcd61c4531f53677a577f2702da432a57
-    xt-validate-algorithms: HmacSHA256
-    xt-validate-recvwindow: 6000
+    validate-signature: 450a879a7a0ccb149af95adc4d1450adcd61c4531f53677a577f2702da432a57
+    validate-algorithms: HmacSHA256
+    validate-recvwindow: 6000
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool
-    xt-validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
+    validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
     Accept-Encoding: gzip, deflate
     Accept-Language: zh-CN,zh;q=0.8
     Content-Type: application/json
@@ -123,16 +123,16 @@ Request Body:
 
 
 
-origion===xt-validate-algorithms=HmacSHA256&xt-validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&xt-validate-recvwindow=6000&xt-validate-timestamp=1666952075363#DELETE#/v4/open-order#{"bizType":"SPOT"}
-request====DELETE Request Url: http://sapi.xt-qa.com/v4/open-order
+origion===validate-algorithms=HmacSHA256&validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&validate-recvwindow=6000&validate-timestamp=1666952075363#DELETE#/v4/open-order#{"bizType":"SPOT"}
+request====DELETE Request Url: https://sapi.xt.com/v4/open-order
 Request Headers: 
-    xt-validate-timestamp: 1666952075363
+    validate-timestamp: 1666952075363
     Accept: text/html,application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-    xt-validate-signature: 4c3fe51a5444ac227d07d35a897846522abdb72b59076cf93ea60d9973c78d3d
-    xt-validate-algorithms: HmacSHA256
-    xt-validate-recvwindow: 6000
+    validate-signature: 4c3fe51a5444ac227d07d35a897846522abdb72b59076cf93ea60d9973c78d3d
+    validate-algorithms: HmacSHA256
+    validate-recvwindow: 6000
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool
-    xt-validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
+    validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
     Accept-Encoding: gzip, deflate
     Accept-Language: zh-CN,zh;q=0.8
     Content-Length: 18
@@ -142,16 +142,16 @@ Request Body:
 
 
 
-origion===xt-validate-algorithms=HmacSHA256&xt-validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&xt-validate-recvwindow=6000&xt-validate-timestamp=1666952091964#GET#/v4/history-order#bizType=SPOT
-request====GET Request Url: http://sapi.xt-qa.com/v4/history-order?bizType=SPOT
+origion===validate-algorithms=HmacSHA256&validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&validate-recvwindow=6000&validate-timestamp=1666952091964#GET#/v4/history-order#bizType=SPOT
+request====GET Request Url: https://sapi.xt.com/v4/history-order?bizType=SPOT
 Request Headers: 
-    xt-validate-timestamp: 1666952091964
+    validate-timestamp: 1666952091964
     Accept: text/html,application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-    xt-validate-signature: bbca15851bdb08c1e5e08b3173760ac00b4e4935404b95ae91655928c74635d7
-    xt-validate-algorithms: HmacSHA256
-    xt-validate-recvwindow: 6000
+    validate-signature: bbca15851bdb08c1e5e08b3173760ac00b4e4935404b95ae91655928c74635d7
+    validate-algorithms: HmacSHA256
+    validate-recvwindow: 6000
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool
-    xt-validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
+    validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
     Accept-Encoding: gzip, deflate
     Accept-Language: zh-CN,zh;q=0.8
     Content-Type: application/json
@@ -160,16 +160,16 @@ Request Body:
 
 
 
-origion===xt-validate-algorithms=HmacSHA256&xt-validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&xt-validate-recvwindow=6000&xt-validate-timestamp=1666952112143#GET#/v4/trade#bizType=SPOT
-request====GET Request Url: http://sapi.xt-qa.com/v4/trade?bizType=SPOT
+origion===validate-algorithms=HmacSHA256&validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&validate-recvwindow=6000&validate-timestamp=1666952112143#GET#/v4/trade#bizType=SPOT
+request====GET Request Url: https://sapi.xt.com/v4/trade?bizType=SPOT
 Request Headers: 
-    xt-validate-timestamp: 1666952112143
+    validate-timestamp: 1666952112143
     Accept: text/html,application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-    xt-validate-signature: ec363062c927ac707c82f1841f819dd7dcf994163e14636292cb33e47f974d4d
-    xt-validate-algorithms: HmacSHA256
-    xt-validate-recvwindow: 6000
+    validate-signature: ec363062c927ac707c82f1841f819dd7dcf994163e14636292cb33e47f974d4d
+    validate-algorithms: HmacSHA256
+    validate-recvwindow: 6000
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool
-    xt-validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
+    validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
     Accept-Encoding: gzip, deflate
     Accept-Language: zh-CN,zh;q=0.8
     Content-Type: application/json
@@ -178,16 +178,16 @@ Request Body:
 
 
 
-origion===xt-validate-algorithms=HmacSHA256&xt-validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&xt-validate-recvwindow=6000&xt-validate-timestamp=1666952127122#GET#/v4/balance#currency=usdt
-request====GET Request Url: http://sapi.xt-qa.com/v4/balance?currency=usdt
+origion===validate-algorithms=HmacSHA256&validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&validate-recvwindow=6000&validate-timestamp=1666952127122#GET#/v4/balance#currency=usdt
+request====GET Request Url: https://sapi.xt.com/v4/balance?currency=usdt
 Request Headers: 
-    xt-validate-timestamp: 1666952127122
+    validate-timestamp: 1666952127122
     Accept: text/html,application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-    xt-validate-signature: a368fe098089aed514fb0b3d525def90eb22da85decb361726ccf9160be819ef
-    xt-validate-algorithms: HmacSHA256
-    xt-validate-recvwindow: 6000
+    validate-signature: a368fe098089aed514fb0b3d525def90eb22da85decb361726ccf9160be819ef
+    validate-algorithms: HmacSHA256
+    validate-recvwindow: 6000
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool
-    xt-validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
+    validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
     Accept-Encoding: gzip, deflate
     Accept-Language: zh-CN,zh;q=0.8
     Content-Type: application/json
@@ -195,16 +195,16 @@ Request Body:
     null
 
 
-origion===xt-validate-algorithms=HmacSHA256&xt-validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&xt-validate-recvwindow=6000&xt-validate-timestamp=1666952141599#GET#/v4/balances#currencies=usdt,btc
-request====GET Request Url: http://sapi.xt-qa.com/v4/balances?currencies=usdt,btc
+origion===validate-algorithms=HmacSHA256&validate-appkey=a8487f72-de99-4242-9c13-1a885c61c1b0&validate-recvwindow=6000&validate-timestamp=1666952141599#GET#/v4/balances#currencies=usdt,btc
+request====GET Request Url: https://sapi.xt.com/v4/balances?currencies=usdt,btc
 Request Headers: 
-    xt-validate-timestamp: 1666952141599
+    validate-timestamp: 1666952141599
     Accept: text/html,application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-    xt-validate-signature: f5d5a976f31fc164769e03331777631022dc155fa82f7c958c85e126062e9a74
-    xt-validate-algorithms: HmacSHA256
-    xt-validate-recvwindow: 6000
+    validate-signature: f5d5a976f31fc164769e03331777631022dc155fa82f7c958c85e126062e9a74
+    validate-algorithms: HmacSHA256
+    validate-recvwindow: 6000
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool
-    xt-validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
+    validate-appkey: a8487f72-de99-4242-9c13-1a885c61c1b0
     Accept-Encoding: gzip, deflate
     Accept-Language: zh-CN,zh;q=0.8
     Content-Type: application/json

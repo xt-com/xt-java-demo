@@ -120,6 +120,13 @@ public class RestTest {
         param.put("currencies", "usdt,btc");
         System.out.println("result====" + XtHttpUtil.get(uri, param));
     }
+    
+    @Test
+    public void getToken() {
+        String uri = "/v4/ws-token";
+        String token = XtHttpUtil.post(uri, null);
+        System.out.println("result====" + token);
+    }
 
     @Test
     public void getToken() {

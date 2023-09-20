@@ -83,17 +83,17 @@ public class XtHttpUtil {
         httpRequest
                 .contentType(contentType)
                 .timeout(3000)
-                .header("xt-validate-algorithms", encry)
-                .header("xt-validate-appkey", appKey)
-                .header("xt-validate-recvwindow", window)
-                .header("xt-validate-timestamp", time)
-                .header("xt-validate-signature", sign);
+                .header("validate-algorithms", encry)
+                .header("validate-appkey", appKey)
+                .header("validate-recvwindow", window)
+                .header("validate-timestamp", time)
+                .header("validate-signature", sign);
 //                .setHttpProxy("127.0.0.1",7890);
     }
 
 
     private static String generateSign(String timestamp, String window, String method, String uri, String query, String jsonBody) {
-        String x = String.format("xt-validate-algorithms=%s&xt-validate-appkey=%s&xt-validate-recvwindow=%s&xt-validate-timestamp=%s", encry, appKey, window, timestamp);
+        String x = String.format("validate-algorithms=%s&validate-appkey=%s&validate-recvwindow=%s&validate-timestamp=%s", encry, appKey, window, timestamp);
         String y = String.format("#%s#%s", method, uri);
         if (query != null && query.length() > 0) {
             y += "#" + query;
