@@ -1,8 +1,13 @@
 package com.xt.api.client.future;
 
 import com.xt.api.dto.FutureCommonResponse;
+import com.xt.api.dto.future.FuturePostOrderRequest;
+import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.QueryMap;
 
 
+import java.util.List;
 import java.util.Map;
 
 
@@ -13,11 +18,20 @@ import java.util.Map;
 public interface XtFutureApiClient {
 
 
-    FutureCommonResponse postOrder(Map<String, String> params);
+    FutureCommonResponse postOrder(FuturePostOrderRequest request);
+
+    FutureCommonResponse batchOrder(List<FuturePostOrderRequest> futurePostOrderRequestList);
+
 
     FutureCommonResponse orderListHistory(Map<String, String> params);
 
     FutureCommonResponse orderTradeList(Map<String, String> params);
 
     FutureCommonResponse orderDetail(Long orderId);
+
+    FutureCommonResponse orderList(Map<String, String> params);
+
+    FutureCommonResponse orderCancel(Long orderId);
+
+    FutureCommonResponse allCancel(String symbol);
 }

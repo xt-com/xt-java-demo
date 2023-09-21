@@ -1,27 +1,24 @@
 package com.xt.demo;
 
+import com.google.gson.Gson;
 import com.xt.api.client.future.XtFutureApiClient;
 import com.xt.api.client.future.XtUFutureApiClientImpl;
-import com.xt.api.client.spot.XtSpotApiClientImpl;
-import com.xt.api.dto.CommonResponse;
 import com.xt.api.dto.FutureCommonResponse;
 import com.xt.api.dto.future.FuturePostOrderRequest;
-import com.xt.api.dto.spot.SpotPostOrderRequest;
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author zhouzhuang
  * @create 2023/9/20 16:15
  */
 public class UFutureApiClientTest {
-
+    Gson gson = new Gson();
     XtFutureApiClient client = new XtUFutureApiClientImpl(null);
 
     @Test
-    public void testpostOrder() {
+    public void postOrder(){
         FuturePostOrderRequest request = FuturePostOrderRequest.builder().symbol("btc_usdt")
                 .origQty("4")
                 .orderType("LIMIT")
@@ -30,15 +27,32 @@ public class UFutureApiClientTest {
                 .orderSide("BUY")
                 .positionSide("LONG")
                 .build();
-        Map<String,String> param = new HashMap<>();
-        param.put("symbol","btc_usdt");
-        param.put("origQty","4");
-        param.put("orderType","LIMIT");
-        param.put("timeInForce","GTC");
-        param.put("price","btc_usdt");
-        param.put("orderSide","BUY");
-        param.put("positionSide","LONG");
-        FutureCommonResponse commonResponse = client.postOrder(param);
+        FutureCommonResponse commonResponse = client.postOrder(request);
+        System.out.println("result:"+commonResponse);
+    }
+
+    @Test
+    public void batchOrder(){
+        FuturePostOrderRequest request = FuturePostOrderRequest.builder().symbol("btc_usdt")
+                .origQty("4")
+                .orderType("LIMIT")
+                .timeInForce("GTC")
+                .price("26972.9")
+                .orderSide("BUY")
+                .positionSide("LONG")
+                .build();
+        FuturePostOrderRequest request2 = FuturePostOrderRequest.builder().symbol("btc_usdt")
+                .origQty("4")
+                .orderType("LIMIT")
+                .timeInForce("GTC")
+                .price("26972.9")
+                .orderSide("BUY")
+                .positionSide("LONG")
+                .build();
+        List<FuturePostOrderRequest> requestList = new ArrayList<>();
+        requestList.add(request);
+        requestList.add(request2);
+        FutureCommonResponse commonResponse = client.batchOrder(requestList);
         System.out.println("result:"+commonResponse);
     }
 
@@ -50,14 +64,33 @@ public class UFutureApiClientTest {
     }
 
     @Test
-    public void queryOrder() {
-//        CommonResponse commonResponse = xtSpotApiClient.queryOrder(274722413139647104L);
-//        System.out.println("result:"+commonResponse);
+    public void orderTradeList() {
+        Map<String, String> params = new HashMap<>();
+        FutureCommonResponse commonResponse = client.orderTradeList(params);
+        System.out.println("result:"+commonResponse);
     }
 
     @Test
-    public void delOrder() {
-//        CommonResponse commonResponse = xtSpotApiClient.delOrder(274722413139647104L);
-//        System.out.println("result:"+commonResponse);
+    public void orderDetail() {
+        FutureCommonResponse commonResponse = client.orderDetail(275110136488455424L);
+        System.out.println("result:"+commonResponse);
+    }
+    @Test
+    public void orderList() {
+        Map<String, String> params = new HashMap<>();
+        FutureCommonResponse commonResponse = client.orderList(params);
+        System.out.println("result:"+commonResponse);
+    }
+
+    @Test
+    public void orderCancel() {
+        FutureCommonResponse commonResponse = client.orderCancel(275110136488455424L);
+        System.out.println("result:"+commonResponse);
+    }
+
+    @Test
+    public void allCancel() {
+        FutureCommonResponse commonResponse = client.allCancel(null);
+        System.out.println("result:"+commonResponse);
     }
 }

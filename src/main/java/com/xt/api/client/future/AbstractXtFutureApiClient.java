@@ -1,10 +1,15 @@
 package com.xt.api.client.future;
 
+import com.google.gson.Gson;
 import com.xt.api.dto.FutureCommonResponse;
+import com.xt.api.dto.future.FutureBatchOrderRequest;
+import com.xt.api.dto.future.FutureOrderCancelAllRequest;
+import com.xt.api.dto.future.FutureOrderCancelRequest;
 import com.xt.api.dto.future.FuturePostOrderRequest;
 import retrofit2.Call;
 import retrofit2.Response;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -12,11 +17,16 @@ import java.util.Map;
  * @create 2023/9/20 18:23
  */
 public abstract class AbstractXtFutureApiClient implements XtFutureApiClient{
-
+    private final Gson gson = new Gson();
     @Override
-    public FutureCommonResponse postOrder(Map<String, String> params) {
-        return executeSync(getService().makeOrder(params));
+    public FutureCommonResponse postOrder(FuturePostOrderRequest request) {
+        return executeSync(getService().postOrder(request));
     }
+    @Override
+    public FutureCommonResponse batchOrder(List<FuturePostOrderRequest> futurePostOrderRequestList){
+        return executeSync(getService().batchOrder(FutureBatchOrderRequest.builder().list(gson.toJson(futurePostOrderRequestList)).build()));
+    }
+
     @Override
     public FutureCommonResponse orderListHistory(Map<String, String> params) {
         return executeSync(getService().orderListHistory(params));
@@ -30,6 +40,20 @@ public abstract class AbstractXtFutureApiClient implements XtFutureApiClient{
     @Override
     public FutureCommonResponse orderDetail(Long orderId) {
         return executeSync(getService().orderDetail(orderId));
+    }
+    @Override
+    public FutureCommonResponse orderList(Map<String, String> params){
+        return executeSync(getService().orderList(params));
+    }
+    @Override
+    public FutureCommonResponse orderCancel(Long orderId){
+        return executeSync(getService().orderCancel(FutureOrderCancelRequest.builder().orderId(orderId).build()));
+    }
+
+    @Override
+    public FutureCommonResponse allCancel(String symbol){
+        symbol = symbol==null?"":symbol;
+        return executeSync(getService().allCancel(FutureOrderCancelAllRequest.builder().symbol(symbol).build()));
     }
 
 

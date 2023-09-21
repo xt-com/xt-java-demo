@@ -5,6 +5,7 @@ import com.xt.api.client.XtOkHttpClientBuilder;
 import com.xt.api.dto.CommonResponse;
 import com.xt.api.dto.FutureCommonResponse;
 import com.xt.api.dto.spot.SpotPostOrderRequest;
+import com.xt.api.interceptor.XtFutureOkHttpInterceptor;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
@@ -28,7 +29,7 @@ public class XtUFutureApiClientImpl extends AbstractXtFutureApiClient{
         Retrofit retrofit =
                 new Retrofit.Builder()
                         .baseUrl(API_URL)
-                        .client(XtOkHttpClientBuilder.build(proxyProperties))
+                        .client(XtOkHttpClientBuilder.build(proxyProperties,new XtFutureOkHttpInterceptor()))
                         .addConverterFactory(JacksonConverterFactory.create())
                         .build();
         service = retrofit.create(XtFutureApiService.class);

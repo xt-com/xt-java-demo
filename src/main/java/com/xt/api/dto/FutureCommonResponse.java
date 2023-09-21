@@ -12,8 +12,8 @@ import java.util.Collections;
 @Data
 @NoArgsConstructor
 public class FutureCommonResponse<T> {
-    private final static Integer RC_SUCCESS = 200;
-    private final static Integer RC_FAILURE = 500;
+    private final static Integer RC_SUCCESS = 0;
+    private final static Integer RC_FAILURE = 1;
     private Integer returnCode;
     private T result;
     private String msgInfo;

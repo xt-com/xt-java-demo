@@ -2,6 +2,7 @@ package com.xt.api.client.future;
 
 import com.xt.api.client.HttpProxyProperties;
 import com.xt.api.client.XtOkHttpClientBuilder;
+import com.xt.api.interceptor.XtFutureOkHttpInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
@@ -21,7 +22,7 @@ public class XtCFutureApiClientImpl extends AbstractXtFutureApiClient{
         Retrofit retrofit =
                 new Retrofit.Builder()
                         .baseUrl(API_URL)
-                        .client(XtOkHttpClientBuilder.build(proxyProperties))
+                        .client(XtOkHttpClientBuilder.build(proxyProperties,new XtFutureOkHttpInterceptor()))
                         .addConverterFactory(JacksonConverterFactory.create())
                         .build();
         service = retrofit.create(XtFutureApiService.class);
