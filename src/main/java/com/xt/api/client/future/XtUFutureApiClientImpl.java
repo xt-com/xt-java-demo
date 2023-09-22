@@ -21,7 +21,7 @@ import java.util.Map;
  */
 public class XtUFutureApiClientImpl extends AbstractXtFutureApiClient{
 
-    private final static String API_URL = "http://fapi.xt-qa.com";
+    private final static String API_URL = "https://fapi.xt.com";
 
     private final XtFutureApiService service;
 
