@@ -59,11 +59,11 @@ public class XtSpotApiClientImpl implements XtSpotApiClient{
             if (response.isSuccessful()) {
                 return response.body();
             }else {
-                System.err.println(String.format("接口调用失败:%s,%s",response.code(),response.toString()));
+                System.err.println(String.format("failed to call interface:%s,%s",response.code(),response.toString()));
                 return CommonResponse.failure(response.toString());
             }
         }catch (Exception e){
-            System.err.println("接口调用异常:"+e);
+            System.err.println("call interface exception:"+e);
             throw new RuntimeException(e);
         }
     }

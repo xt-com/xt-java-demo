@@ -13,8 +13,8 @@ import java.util.TreeMap;
  * @create 2022/10/28 10:48
  */
 public class XtHttpUtil {
-    private static final String appKey = "xxxxx";
-    private static final String secretKey = "xxxxx";
+    private static final String appKey = "ded60ef1-ac8b-435f-912e-72c57618a8e8";
+    private static final String secretKey = "1ef01a3e3ea04867d725f3e9583a911ec5575840";
     private static final String encry = "HmacSHA256";
     private static final String contentType = "application/json";
     private static final String baseUrl = "https://sapi.xt.com";

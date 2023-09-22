@@ -9,11 +9,11 @@ import lombok.Data;
 @Data
 public class HttpProxyProperties {
 
-    /**是否使用代理ip*/
+    /**use proxy ip or not*/
     private boolean enabled;
-    /**代理IP*/
+    /**proxy ip*/
     private String host;
-    /**代理端口*/
+    /**proxy port*/
     private int port;
 
 }
