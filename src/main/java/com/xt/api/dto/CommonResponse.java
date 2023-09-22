@@ -22,7 +22,6 @@ public class CommonResponse<T> {
     private static CommonResponse<Object> SUCCESS = new CommonResponse<>(RC_SUCCESS, MC_SUCCESS, Collections.emptyList(), null);
     private static CommonResponse<Object> FAILURE = new CommonResponse<>(RC_FAILURE, MC_FAILURE, Collections.emptyList(), null);
 
-    //"return code, 200=SUCCESS"
     private Integer rc;
 
     private String mc;

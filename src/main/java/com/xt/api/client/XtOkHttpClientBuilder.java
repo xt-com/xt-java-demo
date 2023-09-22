@@ -20,7 +20,7 @@ public class XtOkHttpClientBuilder {
         int readTimeout = 30;
         int writeTimeOut = 30;
 //        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
-//        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+//        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.HEADERS);
         OkHttpClient.Builder builder = new OkHttpClient.Builder()
                 .connectTimeout(connTimeout, TimeUnit.SECONDS)
                 .readTimeout(readTimeout, TimeUnit.SECONDS)

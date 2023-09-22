@@ -2,9 +2,6 @@ package com.xt.api.client.future;
 
 import com.xt.api.dto.FutureCommonResponse;
 import com.xt.api.dto.future.FuturePostOrderRequest;
-import retrofit2.Call;
-import retrofit2.http.Body;
-import retrofit2.http.QueryMap;
 
 
 import java.util.List;
@@ -34,4 +31,16 @@ public interface XtFutureApiClient {
     FutureCommonResponse orderCancel(Long orderId);
 
     FutureCommonResponse allCancel(String symbol);
+
+    FutureCommonResponse entrustCreatePlan(Map<String, String> params);
+
+    FutureCommonResponse entrustCancelPlan(Long entrustId);
+
+    FutureCommonResponse entrustCancelAllPlan(String symbol);
+
+
+
+    FutureCommonResponse accountInfo();
+
+    FutureCommonResponse balanceDetail(String coin);
 }

@@ -15,7 +15,7 @@ import java.util.Map;
 
 
 /**
- * 合约U本位
+ * U-BASE future
  * @author zhouzhuang
  * @create 2023/9/20 12:18
  */

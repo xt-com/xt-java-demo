@@ -8,17 +8,17 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 
 
 /**
- * 合约币本位
+ * B-BASE Future
  * @author zhouzhuang
  * @create 2023/9/20 12:18
  */
-public class XtCFutureApiClientImpl extends AbstractXtFutureApiClient{
+public class XtBFutureApiClientImpl extends AbstractXtFutureApiClient{
 
     private final static String API_URL = "http://dapi.xt-qa.com";
 
     private final XtFutureApiService service;
 
-    public XtCFutureApiClientImpl(HttpProxyProperties proxyProperties){
+    public XtBFutureApiClientImpl(HttpProxyProperties proxyProperties){
         Retrofit retrofit =
                 new Retrofit.Builder()
                         .baseUrl(API_URL)

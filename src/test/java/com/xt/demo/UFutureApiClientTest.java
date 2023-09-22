@@ -10,6 +10,7 @@ import org.junit.Test;
 import java.util.*;
 
 /**
+ * USDT BASE Future
  * @author zhouzhuang
  * @create 2023/9/20 16:15
  */
@@ -93,4 +94,43 @@ public class UFutureApiClientTest {
         FutureCommonResponse commonResponse = client.allCancel(null);
         System.out.println("result:"+commonResponse);
     }
+
+
+    @Test
+    public void entrustCreatePlan() {
+        Map<String, String> params = new HashMap<>();
+        params.put("symbol","btc_usdt");
+        params.put("orderSide","BUY");
+        params.put("entrustType","TAKE_PROFIT");
+        params.put("origQty","1");
+        params.put("timeInForce","GTC");
+        params.put("triggerPriceType","INDEX_PRICE");
+        params.put("positionSide","LONG");
+        params.put("stopPrice","55");
+        FutureCommonResponse commonResponse = client.entrustCreatePlan(params);
+        System.out.println("result:"+commonResponse);
+    }
+    @Test
+    public void entrustCancelPlan() {
+        FutureCommonResponse commonResponse = client.entrustCancelPlan(275110136488455424L);
+        System.out.println("result:"+commonResponse);
+    }
+    @Test
+    public void entrustCancelAllPlan() {
+        FutureCommonResponse commonResponse = client.entrustCancelAllPlan("btc_usdt");
+        System.out.println("result:"+commonResponse);
+    }
+
+    @Test
+    public void accountInfo() {
+        FutureCommonResponse commonResponse = client.accountInfo();
+        System.out.println("result:"+commonResponse);
+    }
+
+    @Test
+    public void balanceDetail() {
+        FutureCommonResponse commonResponse = client.balanceDetail("usdt");
+        System.out.println("result:"+commonResponse);
+    }
+
 }

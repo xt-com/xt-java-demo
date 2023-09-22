@@ -1,14 +1,12 @@
 package com.xt.api.client.future;
 
 import com.xt.api.dto.FutureCommonResponse;
-import com.xt.api.dto.future.FutureBatchOrderRequest;
 import com.xt.api.dto.future.FutureOrderCancelAllRequest;
 import com.xt.api.dto.future.FutureOrderCancelRequest;
 import com.xt.api.dto.future.FuturePostOrderRequest;
 import retrofit2.Call;
 import retrofit2.http.*;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -24,7 +22,8 @@ public interface XtFutureApiService {
     Call<FutureCommonResponse> postOrder(@Body FuturePostOrderRequest futurePostOrderRequest);
 
     @POST("/future/trade/v1/order/create-batch")
-    Call<FutureCommonResponse> batchOrder(@Body FutureBatchOrderRequest request);
+    @Headers("Content-Type: application/x-www-form-urlencoded")
+    Call<FutureCommonResponse> batchOrder(@Query("list") String list);
 
     @GET("/future/trade/v1/order/list-history")
     Call<FutureCommonResponse> orderListHistory(@QueryMap Map<String, String> params);
@@ -43,4 +42,22 @@ public interface XtFutureApiService {
 
     @POST("/future/trade/v1/order/cancel-all")
     Call<FutureCommonResponse> allCancel(@Body FutureOrderCancelAllRequest request);
+
+    @POST("/future/trade/v1/entrust/create-plan")
+    @Headers("Content-Type: application/x-www-form-urlencoded")
+    Call<FutureCommonResponse> entrustCreatePlan(@QueryMap Map<String, String> params);
+
+    @POST("/future/trade/v1/entrust/cancel-plan")
+    @Headers("Content-Type: application/x-www-form-urlencoded")
+    Call<FutureCommonResponse> entrustCancelPlan(@Query("entrustId") Long entrustId);
+
+    @POST("/future/trade/v1/entrust/cancel-all-plan")
+    @Headers("Content-Type: application/x-www-form-urlencoded")
+    Call<FutureCommonResponse> entrustCancelAllPlan(@Query("symbol") String symbol);
+
+    @GET("/future/user/v1/account/info")
+    Call<FutureCommonResponse> accountInfo();
+
+    @GET("/future/user/v1/balance/detail")
+    Call<FutureCommonResponse> balanceDetail(@Query("coin") String coin);
 }

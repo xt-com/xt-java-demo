@@ -6,6 +6,7 @@ import com.xt.api.dto.spot.SpotPostOrderRequest;
 import org.junit.Test;
 
 /**
+ * SPOT Business
  * @author zhouzhuang
  * @create 2023/9/20 16:15
  */

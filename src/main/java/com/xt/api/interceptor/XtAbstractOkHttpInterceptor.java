@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 
 /**
  * filter and add header,generate sign for validate
+ *
  * @author zhouzhuang
  * @create 2023/9/21 10:43
  */
@@ -34,54 +35,55 @@ public abstract class XtAbstractOkHttpInterceptor implements Interceptor {
     @NotNull
     @Override
     public Response intercept(@NotNull Chain chain) throws IOException {
-        Request oldRequest = chain.request(); // 获取旧连接
-        Request.Builder requestBuilder = oldRequest.newBuilder(); // 建立新的构建者
-        // 将旧请求的请求方法和请求体设置到新请求中
+        Request oldRequest = chain.request();
+        Request.Builder requestBuilder = oldRequest.newBuilder();
+
         requestBuilder.method(oldRequest.method(), oldRequest.body());
-        // 获取旧请求的头
+
         Headers headers = oldRequest.headers();
         if (headers != null) {
             Set<String> names = headers.names();
             for (String name : names) {
                 String value = headers.get(name);
-                // 将旧请求的头设置到新请求中
+
                 requestBuilder.header(name, value);
             }
         }
-        Long time = System.currentTimeMillis()-500;
+        Long time = System.currentTimeMillis() - 1200;
         String path = chain.request().url().uri().getPath();
         String jsonBody = getJsonBody(oldRequest);
         String query = getQuery(oldRequest);
         String signature = generateSign(String.valueOf(time), window, oldRequest.method().toUpperCase(), path, query, jsonBody);
 
         configHeader(requestBuilder, String.valueOf(time), signature);
-        // 建立新请求连接
+
         Request newRequest = requestBuilder.build();
         return chain.proceed(newRequest);
     }
 
     private String getJsonBody(Request request) throws IOException {
-        if(request.body()!=null && request.body().contentLength()>0){
-            Buffer buffer=new Buffer();
+        if (request.body() != null && request.body().contentLength() > 0) {
+            Buffer buffer = new Buffer();
             request.body().writeTo(buffer);
             return buffer.readUtf8();
         }
         return null;
     }
 
-    private String getQuery(Request request){
+    private String getQuery(Request request) {
         Set<String> set = request.url().queryParameterNames();
         TreeMap<String, String> map = new TreeMap<>();
-        for(String key:set){
-            map.put(key,request.url().queryParameter(key));
+        for (String key : set) {
+            map.put(key, request.url().queryParameter(key));
         }
         return map.entrySet().stream()
-                .map(e->e.getKey()+"="+e.getValue())
+                .map(e -> e.getKey() + "=" + e.getValue())
                 .collect(Collectors.joining("&"));
     }
 
     private void configHeader(Request.Builder requestBuilder, String time, String sign) {
-        requestBuilder.header("Content-Type", contentType)
+        requestBuilder
+                .header("Content-Type", contentType)
                 .header(HEADER_ALG, encry)
                 .header(HEADER_APPKEY, appKey)
                 .header(HEADER_WIND, window)

@@ -24,7 +24,7 @@ public abstract class AbstractXtFutureApiClient implements XtFutureApiClient{
     }
     @Override
     public FutureCommonResponse batchOrder(List<FuturePostOrderRequest> futurePostOrderRequestList){
-        return executeSync(getService().batchOrder(FutureBatchOrderRequest.builder().list(gson.toJson(futurePostOrderRequestList)).build()));
+        return executeSync(getService().batchOrder(gson.toJson(futurePostOrderRequestList)));
     }
 
     @Override
@@ -56,7 +56,30 @@ public abstract class AbstractXtFutureApiClient implements XtFutureApiClient{
         return executeSync(getService().allCancel(FutureOrderCancelAllRequest.builder().symbol(symbol).build()));
     }
 
+    @Override
+    public FutureCommonResponse entrustCreatePlan(Map<String, String> params){
+        return executeSync(getService().entrustCreatePlan(params));
+    }
 
+    @Override
+    public FutureCommonResponse entrustCancelPlan(Long entrustId){
+        return executeSync(getService().entrustCancelPlan(entrustId));
+    }
+
+    @Override
+    public FutureCommonResponse entrustCancelAllPlan(String symbol){
+        return executeSync(getService().entrustCancelAllPlan(symbol));
+    }
+
+    @Override
+    public FutureCommonResponse accountInfo(){
+        return executeSync(getService().accountInfo());
+    }
+
+    @Override
+    public FutureCommonResponse balanceDetail(String coin){
+        return executeSync(getService().balanceDetail(coin));
+    }
 
     public FutureCommonResponse executeSync(Call<FutureCommonResponse> call) {
         try {
