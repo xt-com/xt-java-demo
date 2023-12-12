@@ -16,24 +16,20 @@ public class XtWebSocketClient extends WebSocketClient {
         super(new URI(uri));
     }
 
-    //连接服务端时触发
     @Override
     public void onOpen(ServerHandshake handshakedata) {
-        System.out.println("websocket客户端和服务器连接成功");
+        System.out.println("websocket connect server success");
     }
-    //收到服务端消息时触发
     @Override
     public void onMessage(String message) {
-        System.out.println("websocket客户端收到消息="+ message);
+        System.out.println("websocket recive msg ="+ message);
     }
-    //和服务端断开连接时触发
     @Override
     public void onClose(int code, String reason, boolean remote) {
-        System.out.println("websocket客户端退出连接");
+        System.out.println("websocket client quit");
     }
-    //连接异常时触发
     @Override
     public void onError(Exception ex) {
-        System.out.println("websocket客户端和服务器连接发生错误="+ex.getMessage());
+        System.out.println("websocket connect error ="+ex.getMessage());
     }
 }

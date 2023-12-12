@@ -18,7 +18,7 @@ import java.util.List;
  * @author zhouzhuang
  * @create 2023/12/12 16:36
  */
-public class WebSocketTest {
+public class UserWebSocketTest {
     Gson gson = new Gson();
     WebSocketClient webSocketClient = null;
     @Before
