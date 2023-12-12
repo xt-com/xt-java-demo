@@ -43,4 +43,6 @@ public interface XtFutureApiClient {
     FutureCommonResponse accountInfo();
 
     FutureCommonResponse balanceDetail(String coin);
+
+    FutureCommonResponse listenKey();
 }

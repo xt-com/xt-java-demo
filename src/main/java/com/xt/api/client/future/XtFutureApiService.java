@@ -60,4 +60,7 @@ public interface XtFutureApiService {
 
     @GET("/future/user/v1/balance/detail")
     Call<FutureCommonResponse> balanceDetail(@Query("coin") String coin);
+
+    @GET("/future/user/v1/user/listen-key")
+    Call<FutureCommonResponse> listenKey();
 }

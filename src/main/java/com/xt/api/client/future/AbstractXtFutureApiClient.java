@@ -81,6 +81,11 @@ public abstract class AbstractXtFutureApiClient implements XtFutureApiClient{
         return executeSync(getService().balanceDetail(coin));
     }
 
+    @Override
+    public FutureCommonResponse listenKey(){
+        return executeSync(getService().listenKey());
+    }
+
     public FutureCommonResponse executeSync(Call<FutureCommonResponse> call) {
         try {
             Response<FutureCommonResponse> response = call.execute();

@@ -133,4 +133,10 @@ public class UFutureApiClientTest {
         System.out.println("result:"+commonResponse);
     }
 
+    @Test
+    public void listenKey() {
+        FutureCommonResponse commonResponse = client.listenKey();
+        System.out.println("result:"+commonResponse);
+    }
+
 }
