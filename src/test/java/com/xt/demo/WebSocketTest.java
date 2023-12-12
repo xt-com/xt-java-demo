@@ -24,7 +24,7 @@ public class WebSocketTest {
     @Before
     public void init(){
         try {
-            webSocketClient = new XtWebSocketClient("wss://fstream.xt-qa.com/ws/user");
+            webSocketClient = new XtWebSocketClient("wss://fstream.xt.com/ws/user");
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
