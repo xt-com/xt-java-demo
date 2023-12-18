@@ -14,7 +14,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
  */
 public class XtBFutureApiClientImpl extends AbstractXtFutureApiClient{
 
-    private final static String API_URL = "https://dapi.xt.com";
+    private final static String API_URL = "http://dapi.xt-qa.com";
 
     private final XtFutureApiService service;
 

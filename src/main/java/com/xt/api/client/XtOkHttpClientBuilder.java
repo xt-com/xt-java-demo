@@ -26,7 +26,7 @@ public class XtOkHttpClientBuilder {
                 .readTimeout(readTimeout, TimeUnit.SECONDS)
                 .writeTimeout(writeTimeOut, TimeUnit.SECONDS)
                 .addInterceptor(interceptor)
-//                .addInterceptor(httpLoggingInterceptor)
+//                .addNetworkInterceptor(httpLoggingInterceptor)
                 .retryOnConnectionFailure(true)
                 .connectionPool(pool);
 

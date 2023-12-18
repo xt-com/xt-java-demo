@@ -49,7 +49,7 @@ public abstract class XtAbstractOkHttpInterceptor implements Interceptor {
                 requestBuilder.header(name, value);
             }
         }
-        Long time = System.currentTimeMillis();
+        Long time = System.currentTimeMillis()-500;
         String path = chain.request().url().uri().getPath();
         String jsonBody = getJsonBody(oldRequest);
         String query = getQuery(oldRequest);

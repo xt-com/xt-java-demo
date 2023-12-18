@@ -63,4 +63,10 @@ public interface XtFutureApiService {
 
     @GET("/future/user/v1/user/listen-key")
     Call<FutureCommonResponse> listenKey();
+
+
+    @POST("/future/user/v1/position/adjust-leverage")
+    @Headers("Content-Type: application/x-www-form-urlencoded")
+    Call<FutureCommonResponse> adjustLeverage(@Query("symbol") String symbol,@Query("positionSide") String positionSide,@Query("leverage") Integer leverage);
+
 }

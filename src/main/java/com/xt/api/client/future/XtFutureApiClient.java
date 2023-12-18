@@ -45,4 +45,7 @@ public interface XtFutureApiClient {
     FutureCommonResponse balanceDetail(String coin);
 
     FutureCommonResponse listenKey();
+
+    FutureCommonResponse adjustLeverage(String symbol,String positionSide,Integer leverage);
+
 }

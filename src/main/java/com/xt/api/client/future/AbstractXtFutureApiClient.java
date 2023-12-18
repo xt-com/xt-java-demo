@@ -2,7 +2,6 @@ package com.xt.api.client.future;
 
 import com.google.gson.Gson;
 import com.xt.api.dto.FutureCommonResponse;
-import com.xt.api.dto.future.FutureBatchOrderRequest;
 import com.xt.api.dto.future.FutureOrderCancelAllRequest;
 import com.xt.api.dto.future.FutureOrderCancelRequest;
 import com.xt.api.dto.future.FuturePostOrderRequest;
@@ -84,6 +83,11 @@ public abstract class AbstractXtFutureApiClient implements XtFutureApiClient{
     @Override
     public FutureCommonResponse listenKey(){
         return executeSync(getService().listenKey());
+    }
+
+    @Override
+    public FutureCommonResponse adjustLeverage(String symbol,String positionSide,Integer leverage){
+        return executeSync(getService().adjustLeverage(symbol,positionSide,leverage));
     }
 
     public FutureCommonResponse executeSync(Call<FutureCommonResponse> call) {

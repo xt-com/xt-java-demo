@@ -139,4 +139,10 @@ public class UFutureApiClientTest {
         System.out.println("result:"+commonResponse);
     }
 
+    @Test
+    public void adjustLeverage() {
+        FutureCommonResponse commonResponse = client.adjustLeverage("btc_usdt","LONG",5);
+        System.out.println("result:"+commonResponse);
+    }
+
 }
