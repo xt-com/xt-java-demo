@@ -19,6 +19,7 @@ public class XtHttpUtil {
     private static final String contentType = "application/json";
     private static final String baseUrl = "https://sapi.xt.com";
     private static final String window = "6000";
+    private static final String accessToken = "xxxxx";
     static {
         GlobalHeaders.INSTANCE.clearHeaders();
     }
@@ -87,7 +88,8 @@ public class XtHttpUtil {
                 .header("validate-appkey", appKey)
                 .header("validate-recvwindow", window)
                 .header("validate-timestamp", time)
-                .header("validate-signature", sign);
+                .header("validate-signature", sign)
+                .header("access-token", accessToken);
 //                .setHttpProxy("127.0.0.1",7890);
     }
 
