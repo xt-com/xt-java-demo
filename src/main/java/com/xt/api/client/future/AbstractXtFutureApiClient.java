@@ -93,11 +93,13 @@ public abstract class AbstractXtFutureApiClient implements XtFutureApiClient{
     public FutureCommonResponse executeSync(Call<FutureCommonResponse> call) {
         try {
             Response<FutureCommonResponse> response = call.execute();
+
             if (response.isSuccessful()) {
                 return response.body();
             }else {
                 System.err.println(String.format("failed to call interface:%s,%s",response.code(),response.toString()));
-                return FutureCommonResponse.failure(response.toString());
+                String err = new String(response.errorBody().bytes());
+                return gson.fromJson(err,FutureCommonResponse.class);
             }
         }catch (Exception e){
             System.err.println("call interface exception:"+e);
