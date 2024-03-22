@@ -23,7 +23,7 @@ public class ThirdPartyTest {
         param.put("client_id", "DDJ7BLK49YUCL97S");
         param.put("client_secret", "79bb9a1fece8a8dd6cb7c89aa85ccc2d8ca116f0");
         param.put("grant_type", "authorization_code");
-        param.put("code", "55e3297c-4f3a-4b0f-908a-bfe3de7891c5");
+        param.put("code", "3dd86a5f-06e5-49e8-89f5-6963e3133ff0");
         System.out.println("json====" + JSON.toJSONString(param));
         System.out.println("result====" + XtHttpUtil.get(uri, param));
     }
@@ -35,7 +35,7 @@ public class ThirdPartyTest {
         param.put("client_id", "DDJ7BLK49YUCL97S");
         param.put("client_secret", "79bb9a1fece8a8dd6cb7c89aa85ccc2d8ca116f0");
         param.put("grant_type", "refresh_token");
-        param.put("refresh_token", "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI1MjMzMDI1NzQ1NTMxIiwiYWNjb3VudC1pZCI6NTIzMzAyNTc0NTUzMSwidXNlci1pZCI6NTIzMzAyNTc0NTUzMSwic2NvcGUiOiJzcG90QXNzZXRzIiwic2lnbi10eXBlIjoiVVAiLCJhY2NvdW50LWxldmVsIjoxLCJleHAiOjE3MjUyNjU5MDgsImNsaWVudF9pZCI6IkRESjdCTEs0OVlVQ0w5N1MiLCJ0ZW5hbnQtaWQiOjF9.nZojT7pAR14P8UhM02SZvNb338VPX-Gmi261yURHccNiXH_dKv1q6b4EhFtrPVOofnpM_qKgSdQKGMwjWFs39Un-d6wJAMg_Ca0mMCNKUrEEgAI49SScRsTjEfdii3_mk9hytXu5Wo39IJaZzCR9EWX04DZUGEnNQDP5_td-qR0");
+        param.put("refresh_token", "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI1MzM0NDQwODA0NDg2IiwiYWNjb3VudC1pZCI6NTMzNDQ0MDgwNDQ4NiwidXNlci1pZCI6NTMzNDQ0MDgwNDQ4Niwic2NvcGUiOiJ1c2VyaW5mbyIsInNpZ24tdHlwZSI6IlVQIiwiYWNjb3VudC1sZXZlbCI6MSwiZXhwIjoxNzI2NjUxNTYwLCJjbGllbnRfaWQiOiJEREo3QkxLNDlZVUNMOTdTIiwidGVuYW50LWlkIjoxfQ.Yz2VirKiOsjbz0qWrfrVHSAB4NKtKFYKhqh9ejT4gV6qsblQl3tBNZbyOWkDWH32_WMZ8xyMa30287AeeZcBRxNtnP53gYwXLzN55ev_qfTbnzROo72EvhI7ruthZHOh6WfHYAVCWNquaVoT05X1V3n3t5m8v49z3YNO2HYz_yk");
         System.out.println("json====" + JSON.toJSONString(param));
         System.out.println("result====" + XtHttpUtil.get(uri, param));
     }
@@ -139,5 +139,13 @@ public class ThirdPartyTest {
         Map<String, Object> param = new HashMap<>();
         param.put("currencies", "usdt,btc");
         System.out.println("result====" + XtHttpUtil.get(uri, param));
+    }
+
+    @Test
+    public void applyApiKey() {
+        String uri = "/user/account/api-key";
+        Map<String, Object> param = new HashMap<>();
+        System.out.println("json====" + JSON.toJSONString(param));
+        System.out.println("result====" + XtHttpUtil.post(uri, null));
     }
 }
