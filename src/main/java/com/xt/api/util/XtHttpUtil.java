@@ -19,7 +19,7 @@ public class XtHttpUtil {
     private static final String contentType = "application/json";
     private static final String baseUrl = "http://oapi.xt-qa.com";
     private static final String window = "6000";
-    private static final String accessToken = "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI1MzM0NDQwODA0NDg2IiwiYWNjb3VudC1pZCI6NTMzNDQ0MDgwNDQ4NiwidXNlci1pZCI6NTMzNDQ0MDgwNDQ4Niwic2NvcGUiOiJ1c2VyaW5mbyIsInNpZ24tdHlwZSI6IlVQIiwiYWNjb3VudC1sZXZlbCI6MSwiZXhwIjoxNzExMTg2MTY1LCJjbGllbnRfaWQiOiJEREo3QkxLNDlZVUNMOTdTIiwidGVuYW50LWlkIjoxfQ.dFeDN8kmZWSEz6NRAg08w5r_-F0n8ww7Ih6q_M-cKdUWBVfvlvatAPoBzi5HbbNFNRB55w839oMxx6b3WgQfq-ajMNI7pbSs1cCiyKBq6sSazTMH3QwiOw8_xR3MHKDotJNTM5ByNwRVkIronPF3Zo7irNzU8JyXd-wUV_N0WcA";
+    private static final String accessToken = "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI1MzU2OTIwMTExOTg0IiwiYWNjb3VudC1pZCI6NTM1NjkyMDExMTk4NCwidXNlci1pZCI6NTM1NjkyMDExMTk4NCwic2NvcGUiOiJ1c2VyaW5mbyIsInNpZ24tdHlwZSI6IlVQIiwiYWNjb3VudC1sZXZlbCI6MSwiZXhwIjoxNzExNjA5MzUzLCJjbGllbnRfaWQiOiJEREo3QkxLNDlZVUNMOTdTIiwidGVuYW50LWlkIjoxfQ.QPkkyI8MOKya9zrEiZGOkE8Qaq1gNFMwd6Fro1Iob93Rm_MRk5nfo-NM_cQZ8CId4TfYM2OtnwhDe4OfkAsrY8j43aXruniKkc5Z_4hGx14EjkzX_SbLnXDHL-ztuBWuAT9nMfl84pBbKBGRdEmlBLPHiS5qi1FHb6EXdPJeYpI";
     static {
         GlobalHeaders.INSTANCE.clearHeaders();
     }

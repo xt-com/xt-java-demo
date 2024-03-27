@@ -23,7 +23,7 @@ public class ThirdPartyTest {
         param.put("client_id", "DDJ7BLK49YUCL97S");
         param.put("client_secret", "79bb9a1fece8a8dd6cb7c89aa85ccc2d8ca116f0");
         param.put("grant_type", "authorization_code");
-        param.put("code", "3dd86a5f-06e5-49e8-89f5-6963e3133ff0");
+        param.put("code", "07447ea8-38fe-4a7a-84f7-d3e265d505d9");
         System.out.println("json====" + JSON.toJSONString(param));
         System.out.println("result====" + XtHttpUtil.get(uri, param));
     }
@@ -35,7 +35,7 @@ public class ThirdPartyTest {
         param.put("client_id", "DDJ7BLK49YUCL97S");
         param.put("client_secret", "79bb9a1fece8a8dd6cb7c89aa85ccc2d8ca116f0");
         param.put("grant_type", "refresh_token");
-        param.put("refresh_token", "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI1MzM0NDQwODA0NDg2IiwiYWNjb3VudC1pZCI6NTMzNDQ0MDgwNDQ4NiwidXNlci1pZCI6NTMzNDQ0MDgwNDQ4Niwic2NvcGUiOiJ1c2VyaW5mbyIsInNpZ24tdHlwZSI6IlVQIiwiYWNjb3VudC1sZXZlbCI6MSwiZXhwIjoxNzI2NjUxNTYwLCJjbGllbnRfaWQiOiJEREo3QkxLNDlZVUNMOTdTIiwidGVuYW50LWlkIjoxfQ.Yz2VirKiOsjbz0qWrfrVHSAB4NKtKFYKhqh9ejT4gV6qsblQl3tBNZbyOWkDWH32_WMZ8xyMa30287AeeZcBRxNtnP53gYwXLzN55ev_qfTbnzROo72EvhI7ruthZHOh6WfHYAVCWNquaVoT05X1V3n3t5m8v49z3YNO2HYz_yk");
+        param.put("refresh_token", "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI1MzU2OTIwMTExOTg0IiwiYWNjb3VudC1pZCI6NTM1NjkyMDExMTk4NCwidXNlci1pZCI6NTM1NjkyMDExMTk4NCwic2NvcGUiOiJ1c2VyaW5mbyIsInNpZ24tdHlwZSI6IlVQIiwiYWNjb3VudC1sZXZlbCI6MSwiZXhwIjoxNzI3MDc0OTUzLCJjbGllbnRfaWQiOiJEREo3QkxLNDlZVUNMOTdTIiwidGVuYW50LWlkIjoxfQ.Mn7EDpTHw5u-mEa3mrIpmhkuFCLsmNow-eXA_gmkti0OUkEvoNazn8WhPd7ynykYGURhVQDWXXCmOToAuj8OuRfBxY1ME7Qp0zJ43oLB-j518BvHrJJQeRFo81LSmrkBVlNuMEoLN6BNtROmJVUroIom_hoRXsd5p0_whmtafec");
         System.out.println("json====" + JSON.toJSONString(param));
         System.out.println("result====" + XtHttpUtil.get(uri, param));
     }
