@@ -19,7 +19,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
  */
 public class XtSpotApiClientImpl implements XtSpotApiClient{
 
-    private final static String API_URL = "http://sapi.xt-qa.com";
+    private final static String API_URL = "https://sapi.xt.com";
 
     private final XtSpotApiService service;
 
