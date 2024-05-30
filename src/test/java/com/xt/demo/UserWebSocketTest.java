@@ -24,7 +24,7 @@ public class UserWebSocketTest {
     @Before
     public void init(){
         try {
-            webSocketClient = new XtWebSocketClient("wss://fstream.xt.com/ws/user");
+            webSocketClient = new XtWebSocketClient("wss://fstream.xt.com/ws/market");
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
@@ -55,11 +55,8 @@ public class UserWebSocketTest {
     public void subscribeAll(){
         String listenKey="EB346241DFFEA0D7634EEE01520B25291702365643909";
         List<String> params = new ArrayList<>();
-        params.add(Topic.order.name()+"@"+listenKey);
-        params.add(Topic.trade.name()+"@"+listenKey);
-        params.add(Topic.position.name()+"@"+listenKey);
-        params.add(Topic.balance.name()+"@"+listenKey);
-        params.add(Topic.notify.name()+"@"+listenKey);
+        params.add("kline@btc_usdt,1m");
+
         RequestMessage requestMessage = RequestMessage.builder().id("001").method(Method.SUBSCRIBE.name()).params(params).build();
         webSocketClient.send(gson.toJson(requestMessage));
     }

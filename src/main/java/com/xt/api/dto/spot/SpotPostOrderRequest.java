@@ -23,4 +23,6 @@ public class SpotPostOrderRequest {
     private String price;
 
     private String quantity;
+    private String media;
+    private String mediaChannel;
 }

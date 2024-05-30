@@ -1,10 +1,13 @@
 package com.xt.api.client;
 
 import org.java_websocket.client.WebSocketClient;
+import org.java_websocket.drafts.Draft_6455;
+import org.java_websocket.extensions.permessage_deflate.PerMessageDeflateExtension;
 import org.java_websocket.handshake.ServerHandshake;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Collections;
 
 /**
  * @author zhouzhuang
@@ -13,7 +16,7 @@ import java.net.URISyntaxException;
 public class XtWebSocketClient extends WebSocketClient {
 
     public XtWebSocketClient(String uri) throws URISyntaxException {
-        super(new URI(uri));
+        super(new URI(uri),new Draft_6455(Collections.singletonList(new PerMessageDeflateExtension())));
     }
 
     @Override
