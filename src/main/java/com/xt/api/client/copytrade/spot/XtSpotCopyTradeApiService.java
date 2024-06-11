@@ -1,11 +1,10 @@
 package com.xt.api.client.copytrade.spot;
 
 import com.xt.api.dto.CommonResponse;
-import com.xt.api.dto.copytrade.spot.CurCopyTradeOrderReqDTO;
-import com.xt.api.dto.spot.NetworthUpdateRequest;
-import com.xt.api.dto.spot.SpotPostOrderRequest;
 import retrofit2.Call;
 import retrofit2.http.*;
+
+import java.util.Map;
 
 /**
  * @author zhouzhuang
@@ -13,6 +12,6 @@ import retrofit2.http.*;
  */
 public interface XtSpotCopyTradeApiService {
 
-    @GET("/v4/order/copy-trade/order/cur-leader-order")
-    Call<CommonResponse> getCurLeaderOrder(@Body CurCopyTradeOrderReqDTO request);
+    @GET("/v1/copy-trade-order/copy-trade/order/cur-leader-order")
+    Call<CommonResponse> getCurLeaderOrder(@QueryMap Map<String, String> params);
 }

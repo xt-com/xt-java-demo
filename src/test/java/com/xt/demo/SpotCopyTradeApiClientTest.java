@@ -1,11 +1,11 @@
 package com.xt.demo;
 
 import com.xt.api.client.copytrade.spot.XtSpotCopyTradeApiClientImpl;
-import com.xt.api.client.spot.XtSpotApiClientImpl;
 import com.xt.api.dto.CommonResponse;
-import com.xt.api.dto.copytrade.spot.CurCopyTradeOrderReqDTO;
-import com.xt.api.dto.spot.SpotPostOrderRequest;
 import org.junit.Test;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author xielina
@@ -17,10 +17,9 @@ public class SpotCopyTradeApiClientTest {
 
     @Test
     public void testGetCurLeaderOrder() {
-        CurCopyTradeOrderReqDTO request = CurCopyTradeOrderReqDTO.builder()
-                .type(1)
-                .build();
-        CommonResponse commonResponse = xtSpotApiClient.getCurLeaderOrder(request);
+        Map<String, String> params = new HashMap<>();
+        params.put("type","1");
+        CommonResponse commonResponse = xtSpotApiClient.getCurLeaderOrder(params);
         System.out.println("result:"+commonResponse);
     }
 }
