@@ -22,4 +22,12 @@ public class SpotCopyTradeApiClientTest {
         CommonResponse commonResponse = xtSpotApiClient.getCurLeaderOrder(params);
         System.out.println("result:"+commonResponse);
     }
+
+    @Test
+    public void testGetCurFollowerOrder() {
+        Map<String, String> params = new HashMap<>();
+        params.put("type","1");
+        CommonResponse commonResponse = xtSpotApiClient.getCurFollowerOrder(params);
+        System.out.println("result:"+commonResponse);
+    }
 }

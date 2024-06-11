@@ -13,4 +13,6 @@ import java.util.Map;
 public interface XtSpotCopyTradeApiClient {
 
     CommonResponse getCurLeaderOrder(@QueryMap Map<String, String> params);
+
+    CommonResponse getCurFollowerOrder(@QueryMap Map<String, String> params);
 }

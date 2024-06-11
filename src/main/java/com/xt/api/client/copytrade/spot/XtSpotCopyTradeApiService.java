@@ -14,4 +14,7 @@ public interface XtSpotCopyTradeApiService {
 
     @GET("/v1/copy-trade-order/copy-trade/order/cur-leader-order")
     Call<CommonResponse> getCurLeaderOrder(@QueryMap Map<String, String> params);
+
+    @GET("/v1/copy-trade-order/copy-trade/order/cur-follower-order")
+    Call<CommonResponse> getCurFollowerOrder(@QueryMap Map<String, String> params);
 }
