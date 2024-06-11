@@ -1,6 +1,7 @@
 package com.xt.api.client.copytrade.spot;
 
 import com.xt.api.dto.CommonResponse;
+import com.xt.api.dto.copytrade.spot.CopyTradeProfitUpdateReqDTO;
 import retrofit2.Call;
 import retrofit2.http.*;
 
@@ -23,4 +24,7 @@ public interface XtSpotCopyTradeApiService {
 
     @GET("/v1/copy-trade-order/copy-trade/order/his-leader-order")
     Call<CommonResponse> getHisLeaderOrder(@QueryMap Map<String, String> params);
+
+    @POST("/v1/copy-trade-order/copy-trade/order/stop-profit-loss")
+    Call<CommonResponse> stopProfitLoss(@Body CopyTradeProfitUpdateReqDTO request);
 }

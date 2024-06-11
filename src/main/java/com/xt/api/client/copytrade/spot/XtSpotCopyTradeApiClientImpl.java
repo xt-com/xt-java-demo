@@ -3,11 +3,13 @@ package com.xt.api.client.copytrade.spot;
 import com.xt.api.client.HttpProxyProperties;
 import com.xt.api.client.XtOkHttpClientBuilder;
 import com.xt.api.dto.CommonResponse;
+import com.xt.api.dto.copytrade.spot.CopyTradeProfitUpdateReqDTO;
 import com.xt.api.interceptor.XtSpotOkHttpInterceptor;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
+import retrofit2.http.Body;
 import retrofit2.http.QueryMap;
 
 import java.util.Map;
@@ -34,23 +36,28 @@ public class XtSpotCopyTradeApiClientImpl implements XtSpotCopyTradeApiClient {
     }
 
     @Override
-    public CommonResponse getCurLeaderOrder(@QueryMap Map<String, String> params) {
+    public CommonResponse getCurLeaderOrder(Map<String, String> params) {
         return executeSync(service.getCurLeaderOrder(params));
     }
 
     @Override
-    public CommonResponse getCurFollowerOrder(@QueryMap Map<String, String> params){
+    public CommonResponse getCurFollowerOrder(Map<String, String> params){
         return executeSync(service.getCurFollowerOrder(params));
     }
 
     @Override
-    public CommonResponse getHisFollowerOrder(@QueryMap Map<String, String> params){
+    public CommonResponse getHisFollowerOrder(Map<String, String> params){
         return executeSync(service.getHisFollowerOrder(params));
     }
 
     @Override
-    public CommonResponse getHisLeaderOrder(@QueryMap Map<String, String> params){
+    public CommonResponse getHisLeaderOrder(Map<String, String> params){
         return executeSync(service.getHisLeaderOrder(params));
+    }
+
+    @Override
+    public CommonResponse stopProfitLoss(CopyTradeProfitUpdateReqDTO request){
+        return executeSync(service.stopProfitLoss(request));
     }
 
     public CommonResponse executeSync(Call<CommonResponse> call) {

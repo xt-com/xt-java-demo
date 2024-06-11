@@ -1,6 +1,8 @@
 package com.xt.api.client.copytrade.spot;
 
 import com.xt.api.dto.CommonResponse;
+import com.xt.api.dto.copytrade.spot.CopyTradeProfitUpdateReqDTO;
+import retrofit2.http.Body;
 import retrofit2.http.QueryMap;
 
 import java.util.Map;
@@ -19,4 +21,6 @@ public interface XtSpotCopyTradeApiClient {
     CommonResponse getHisFollowerOrder(@QueryMap Map<String, String> params);
 
     CommonResponse getHisLeaderOrder(@QueryMap Map<String, String> params);
+
+    CommonResponse stopProfitLoss(@Body CopyTradeProfitUpdateReqDTO request);
 }
