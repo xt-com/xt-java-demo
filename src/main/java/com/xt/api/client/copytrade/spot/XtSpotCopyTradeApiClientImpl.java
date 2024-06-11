@@ -65,6 +65,11 @@ public class XtSpotCopyTradeApiClientImpl implements XtSpotCopyTradeApiClient {
         return executeSync(service.sell(params));
     }
 
+    @Override
+    public CommonResponse sellAll(Map<String, String> params){
+        return executeSync(service.sellAll(params));
+    }
+
     public CommonResponse executeSync(Call<CommonResponse> call) {
         try {
             Response<CommonResponse> response = call.execute();

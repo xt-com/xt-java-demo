@@ -30,4 +30,7 @@ public interface XtSpotCopyTradeApiService {
 
     @POST("/v1/copy-trade-order/copy-trade/order/sell")
     Call<CommonResponse> sell(@QueryMap Map<String, String> params);
+
+    @POST("/v1/copy-trade-order/copy-trade/order/sell-all")
+    Call<CommonResponse> sellAll(@QueryMap Map<String, String> params);
 }
