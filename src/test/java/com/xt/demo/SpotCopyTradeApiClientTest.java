@@ -81,4 +81,13 @@ public class SpotCopyTradeApiClientTest {
         CommonResponse commonResponse = xtSpotApiClient.sellAll(params);
         System.out.println("result:"+commonResponse);
     }
+
+    @Test
+    public void testClose() {
+        Map<String, String> params = new HashMap<>();
+        params.put("leaderOrderId","370800430378335424");
+        params.put("symbol","ont_usdt");
+        CommonResponse commonResponse = xtSpotApiClient.close(params);
+        System.out.println("result:"+commonResponse);
+    }
 }

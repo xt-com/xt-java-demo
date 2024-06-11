@@ -27,4 +27,6 @@ public interface XtSpotCopyTradeApiClient {
     CommonResponse sell(Map<String, String> params);
 
     CommonResponse sellAll(Map<String, String> params);
+    
+    CommonResponse close(Map<String, String> params);
 }
