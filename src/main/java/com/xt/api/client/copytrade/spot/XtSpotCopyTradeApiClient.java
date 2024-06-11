@@ -23,4 +23,6 @@ public interface XtSpotCopyTradeApiClient {
     CommonResponse getHisLeaderOrder(@QueryMap Map<String, String> params);
 
     CommonResponse stopProfitLoss(@Body CopyTradeProfitUpdateReqDTO request);
+
+    CommonResponse sell(Map<String, String> params);
 }

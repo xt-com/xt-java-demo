@@ -27,4 +27,7 @@ public interface XtSpotCopyTradeApiService {
 
     @POST("/v1/copy-trade-order/copy-trade/order/stop-profit-loss")
     Call<CommonResponse> stopProfitLoss(@Body CopyTradeProfitUpdateReqDTO request);
+
+    @POST("/v1/copy-trade-order/copy-trade/order/sell")
+    Call<CommonResponse> sell(@QueryMap Map<String, String> params);
 }

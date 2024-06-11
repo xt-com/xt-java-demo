@@ -21,7 +21,7 @@ import java.util.Map;
  */
 public class XtSpotCopyTradeApiClientImpl implements XtSpotCopyTradeApiClient {
 
-    private final static String API_URL = "https://sapi.xt.com";
+    private final static String API_URL = "http://sapi.xt-qa.com";
 
     private final XtSpotCopyTradeApiService service;
 
@@ -58,6 +58,11 @@ public class XtSpotCopyTradeApiClientImpl implements XtSpotCopyTradeApiClient {
     @Override
     public CommonResponse stopProfitLoss(CopyTradeProfitUpdateReqDTO request){
         return executeSync(service.stopProfitLoss(request));
+    }
+
+    @Override
+    public CommonResponse sell(Map<String, String> params){
+        return executeSync(service.sell(params));
     }
 
     public CommonResponse executeSync(Call<CommonResponse> call) {

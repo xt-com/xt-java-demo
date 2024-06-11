@@ -61,8 +61,16 @@ public class SpotCopyTradeApiClientTest {
                 .triggerProfitPrice(new BigDecimal("15.0"))
                 .triggerStopPrice(new BigDecimal("0.1"))
                 .build();
-        int scale = request.getTriggerProfitPrice().scale();
         CommonResponse commonResponse = xtSpotApiClient.stopProfitLoss(request);
+        System.out.println("result:"+commonResponse);
+    }
+
+    @Test
+    public void testSell() {
+        Map<String, String> params = new HashMap<>();
+        params.put("leaderOrderId","370788011182603456");
+        params.put("symbol","ont_usdt");
+        CommonResponse commonResponse = xtSpotApiClient.sell(params);
         System.out.println("result:"+commonResponse);
     }
 }
