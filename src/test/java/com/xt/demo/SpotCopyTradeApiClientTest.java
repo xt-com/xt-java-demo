@@ -30,4 +30,24 @@ public class SpotCopyTradeApiClientTest {
         CommonResponse commonResponse = xtSpotApiClient.getCurFollowerOrder(params);
         System.out.println("result:"+commonResponse);
     }
+
+    @Test
+    public void testGetHisFollowerOrder() {
+        Map<String, String> params = new HashMap<>();
+        params.put("symbol","ont_usdt");
+        params.put("direction","NEXT");
+        params.put("limit","10");
+        CommonResponse commonResponse = xtSpotApiClient.getHisFollowerOrder(params);
+        System.out.println("result:"+commonResponse);
+    }
+
+    @Test
+    public void testGetHisLeaderOrder() {
+        Map<String, String> params = new HashMap<>();
+        params.put("symbol","ont_usdt");
+        params.put("direction","NEXT");
+        params.put("limit","10");
+        CommonResponse commonResponse = xtSpotApiClient.getHisLeaderOrder(params);
+        System.out.println("result:"+commonResponse);
+    }
 }

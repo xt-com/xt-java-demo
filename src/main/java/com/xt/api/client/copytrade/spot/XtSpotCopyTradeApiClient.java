@@ -15,4 +15,8 @@ public interface XtSpotCopyTradeApiClient {
     CommonResponse getCurLeaderOrder(@QueryMap Map<String, String> params);
 
     CommonResponse getCurFollowerOrder(@QueryMap Map<String, String> params);
+
+    CommonResponse getHisFollowerOrder(@QueryMap Map<String, String> params);
+
+    CommonResponse getHisLeaderOrder(@QueryMap Map<String, String> params);
 }

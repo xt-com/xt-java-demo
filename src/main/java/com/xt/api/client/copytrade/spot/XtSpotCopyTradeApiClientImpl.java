@@ -43,6 +43,16 @@ public class XtSpotCopyTradeApiClientImpl implements XtSpotCopyTradeApiClient {
         return executeSync(service.getCurFollowerOrder(params));
     }
 
+    @Override
+    public CommonResponse getHisFollowerOrder(@QueryMap Map<String, String> params){
+        return executeSync(service.getHisFollowerOrder(params));
+    }
+
+    @Override
+    public CommonResponse getHisLeaderOrder(@QueryMap Map<String, String> params){
+        return executeSync(service.getHisLeaderOrder(params));
+    }
+
     public CommonResponse executeSync(Call<CommonResponse> call) {
         try {
             Response<CommonResponse> response = call.execute();
