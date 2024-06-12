@@ -1,7 +1,10 @@
 package com.xt.api.client.copytrade.futures;
 
 import com.xt.api.dto.FutureCommonResponse;
+import com.xt.api.dto.copytrade.futures.CopyTradeProfitUpdateReqDTO;
+import com.xt.api.dto.copytrade.futures.FollowLeaderDTO;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.QueryMap;
@@ -19,17 +22,17 @@ public interface XtFuturesCopyTradeApiService {
     Call<FutureCommonResponse> cancelLeader(@QueryMap Map<String, String> params);
 
     @POST("/copytrade/user/v1/copy-trade/choose-leader")
-    Call<FutureCommonResponse> chooseLeader(@QueryMap Map<String, String> params);
+    Call<FutureCommonResponse> chooseLeader(@Body FollowLeaderDTO request);
     @POST("/copytrade/user/v1/copy-trade/cancel-choose-leader")
     Call<FutureCommonResponse> cancelChooseLeader(@QueryMap Map<String, String> params);
 
     @POST("/copytrade/order/v1/copy-trade/close-all")
     Call<FutureCommonResponse> closeAllOrders(@QueryMap Map<String, String> params);
     @POST("/copytrade/order/v1/copy-trade/close")
-    Call<FutureCommonResponse> closeOrder(@QueryMap Map<String, String> params);
+    Call<FutureCommonResponse> closeOrder(@QueryMap Map<String, Object> params);
 
     @POST("/copytrade/order/v1/copy-trade/update-profit-stop")
-    Call<FutureCommonResponse> stopProfitLoss(@QueryMap Map<String, String> params);
+    Call<FutureCommonResponse> stopProfitLoss(@Body CopyTradeProfitUpdateReqDTO dto);
 
     @GET("/copytrade/user/v1/public/copy-trade/symbol-list")
     Call<FutureCommonResponse> getAvailableSymbols(@QueryMap Map<String, String> params);
@@ -77,7 +80,7 @@ public interface XtFuturesCopyTradeApiService {
     Call<FutureCommonResponse> getPublicLeaderSymbolPrefer(@QueryMap Map<String, String> params);
 
     @GET("/copytrade/user/v1/copy-trade/follower-leaders-page")
-    Call<FutureCommonResponse> getMyFollowLeaderHistroy(@QueryMap Map<String, String> params);
+    Call<FutureCommonResponse> getMyFollowLeaderHistory(@QueryMap Map<String, String> params);
     @GET("/copytrade/user/v1/copy-trade/my-follow-list")
     Call<FutureCommonResponse> getMyFollowLeaderList(@QueryMap Map<String, String> params);
     @GET("/copytrade/user/v1/copy-trade/user-settings")
