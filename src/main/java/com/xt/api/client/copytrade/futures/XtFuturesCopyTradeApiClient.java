@@ -1,6 +1,9 @@
 package com.xt.api.client.copytrade.futures;
 
 import com.xt.api.dto.FutureCommonResponse;
+import com.xt.api.dto.copytrade.futures.CopyTradeProfitUpdateReqDTO;
+import com.xt.api.dto.copytrade.futures.FollowLeaderDTO;
+import retrofit2.http.Body;
 import retrofit2.http.QueryMap;
 
 import java.util.Map;
@@ -15,13 +18,13 @@ public interface XtFuturesCopyTradeApiClient {
     FutureCommonResponse applyLeader(@QueryMap Map<String, String> params);
     FutureCommonResponse cancelLeader(@QueryMap Map<String, String> params);
 
-    FutureCommonResponse chooseLeader(@QueryMap Map<String, String> params);
+    FutureCommonResponse chooseLeader(@Body FollowLeaderDTO request);
     FutureCommonResponse cancelChooseLeader(@QueryMap Map<String, String> params);
 
     FutureCommonResponse closeAllOrders(@QueryMap Map<String, String> params);
-    FutureCommonResponse closeOrder(@QueryMap Map<String, String> params);
+    FutureCommonResponse closeOrder(@QueryMap Map<String, Object> params);
 
-    FutureCommonResponse stopProfitLoss(@QueryMap Map<String, String> params);
+    FutureCommonResponse stopProfitLoss(@Body CopyTradeProfitUpdateReqDTO dto);
 
     FutureCommonResponse getAvailableSymbols(@QueryMap Map<String, String> params);
     FutureCommonResponse getFollowInfo(@QueryMap Map<String, String> params);
@@ -49,7 +52,7 @@ public interface XtFuturesCopyTradeApiClient {
     FutureCommonResponse getPublicLeaderStats(@QueryMap Map<String, String> params);
     FutureCommonResponse getPublicLeaderSymbolPrefer(@QueryMap Map<String, String> params);
 
-    FutureCommonResponse getMyFollowLeaderHistroy(@QueryMap Map<String, String> params);
+    FutureCommonResponse getMyFollowLeaderHistory(@QueryMap Map<String, String> params);
     FutureCommonResponse getMyFollowLeaderList(@QueryMap Map<String, String> params);
     FutureCommonResponse getUserSettings(@QueryMap Map<String, String> params);
 

@@ -3,6 +3,8 @@ package com.xt.api.client.copytrade.futures;
 import com.xt.api.client.HttpProxyProperties;
 import com.xt.api.client.XtOkHttpClientBuilder;
 import com.xt.api.dto.FutureCommonResponse;
+import com.xt.api.dto.copytrade.futures.CopyTradeProfitUpdateReqDTO;
+import com.xt.api.dto.copytrade.futures.FollowLeaderDTO;
 import com.xt.api.interceptor.XtSpotOkHttpInterceptor;
 import retrofit2.Call;
 import retrofit2.Response;
@@ -41,8 +43,8 @@ public class XtFuturesCopyTradeApiClientImpl implements XtFuturesCopyTradeApiCli
     }
 
     @Override
-    public FutureCommonResponse chooseLeader(Map<String, String> params) {
-        return executeSync(service.chooseLeader(params));
+    public FutureCommonResponse chooseLeader(FollowLeaderDTO request) {
+        return executeSync(service.chooseLeader(request));
     }
 
     @Override
@@ -56,13 +58,13 @@ public class XtFuturesCopyTradeApiClientImpl implements XtFuturesCopyTradeApiCli
     }
 
     @Override
-    public FutureCommonResponse closeOrder(Map<String, String> params) {
+    public FutureCommonResponse closeOrder(Map<String, Object> params) {
         return executeSync(service.closeOrder(params));
     }
 
     @Override
-    public FutureCommonResponse stopProfitLoss(Map<String, String> params){
-        return executeSync(service.stopProfitLoss(params));
+    public FutureCommonResponse stopProfitLoss(CopyTradeProfitUpdateReqDTO dto){
+        return executeSync(service.stopProfitLoss(dto));
     }
 
     @Override
@@ -161,8 +163,8 @@ public class XtFuturesCopyTradeApiClientImpl implements XtFuturesCopyTradeApiCli
     }
 
     @Override
-    public FutureCommonResponse getMyFollowLeaderHistroy(Map<String, String> params) {
-        return executeSync(service.getMyFollowLeaderHistroy(params));
+    public FutureCommonResponse getMyFollowLeaderHistory(Map<String, String> params) {
+        return executeSync(service.getMyFollowLeaderHistory(params));
     }
 
     @Override
