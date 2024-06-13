@@ -167,6 +167,11 @@ public class XtSpotCopyTradeApiClientImpl implements XtSpotCopyTradeApiClient {
     }
 
     @Override
+    public CommonResponse getLeaderIncom(Map<String, String> params){
+        return executeSync(service.getLeaderIncom(params));
+    }
+
+    @Override
     public CommonResponse getLeaderTradingPrefer(Map<String, String> params){
         return executeSync(service.getLeaderTradingPrefer(params));
     }
