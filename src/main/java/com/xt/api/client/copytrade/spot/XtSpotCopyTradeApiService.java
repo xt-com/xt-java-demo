@@ -93,6 +93,9 @@ public interface XtSpotCopyTradeApiService {
     @GET("/v1/copy-trade-balance/public/copy-trade/leader-income-rate")
     Call<CommonResponse> getLeaderIncomeRate(@QueryMap Map<String, String> params);
 
+    @GET("/v1/copy-trade-balance/public/copy-trade/leader-income-chart")
+    Call<CommonResponse> getLeaderIncom(@QueryMap Map<String, String> params);
+
     @GET("/v1/copy-trade-balance/public/copy-trade/leader-trading-prefer")
     Call<CommonResponse> getLeaderTradingPrefer(@QueryMap Map<String, String> params);
 

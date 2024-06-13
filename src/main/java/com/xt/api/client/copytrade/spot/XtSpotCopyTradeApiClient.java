@@ -68,6 +68,8 @@ public interface XtSpotCopyTradeApiClient {
 
     CommonResponse getLeaderIncomeRate(Map<String, String> params);
 
+    CommonResponse getLeaderIncom(Map<String, String> params);
+
     CommonResponse getLeaderTradingPrefer(Map<String, String> params);
 
     CommonResponse getLeaderOrderPage(Map<String, String> params);

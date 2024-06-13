@@ -248,6 +248,14 @@ public class SpotCopyTradeApiClientTest {
     }
 
     @Test
+    public void testGetLeaderIncom(){
+        Map<String, String> params = new HashMap<>();
+        params.put("accountId","5589391507863");
+        CommonResponse commonResponse = xtSpotApiClient.getLeaderIncom(params);
+        System.out.println("result:"+commonResponse);
+    }
+
+    @Test
     public void testGetLeaderTradingPrefer(){
         Map<String, String> params = new HashMap<>();
         params.put("accountId","5589391507863");
