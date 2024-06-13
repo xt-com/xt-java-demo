@@ -56,4 +56,7 @@ public interface XtFuturesCopyTradeApiClient {
     FutureCommonResponse getMyFollowLeaderList(@QueryMap Map<String, String> params);
     FutureCommonResponse getUserSettings(@QueryMap Map<String, String> params);
 
+    FutureCommonResponse getLeverageList(@QueryMap Map<String, String> params);
+    FutureCommonResponse adjustLeverage(@QueryMap Map<String, String> params);
+
 }

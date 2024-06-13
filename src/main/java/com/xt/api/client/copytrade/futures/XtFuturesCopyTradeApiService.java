@@ -85,5 +85,9 @@ public interface XtFuturesCopyTradeApiService {
     Call<FutureCommonResponse> getMyFollowLeaderList(@QueryMap Map<String, String> params);
     @GET("/copytrade/user/v1/copy-trade/user-settings")
     Call<FutureCommonResponse> getUserSettings(@QueryMap Map<String, String> params);
+    @GET("/copytrade/order/v1/position/list")
+    Call<FutureCommonResponse> getLeverageList(@QueryMap Map<String, String> params);
+    @POST("/copytrade/order/v1/position/adjust-leverage")
+    Call<FutureCommonResponse> adjustLeverage(@QueryMap Map<String, String> params);
 
 }

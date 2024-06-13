@@ -176,7 +176,17 @@ public class XtFuturesCopyTradeApiClientImpl implements XtFuturesCopyTradeApiCli
     public FutureCommonResponse getUserSettings(Map<String, String> params) {
         return executeSync(service.getUserSettings(params));
     }
-    
+
+    @Override
+    public FutureCommonResponse getLeverageList(Map<String, String> params) {
+        return executeSync(service.getLeverageList(params));
+    }
+
+    @Override
+    public FutureCommonResponse adjustLeverage(Map<String, String> params) {
+        return executeSync(service.adjustLeverage(params));
+    }
+
     public FutureCommonResponse executeSync(Call<FutureCommonResponse> call) {
         try {
             Response<FutureCommonResponse> response = call.execute();

@@ -273,4 +273,20 @@ public class FuturesCopyTradeApiClientTest {
         System.out.println("result: " + futureCommonResponse);
     }
 
+    @Test
+    public void testGetLeverageList(){
+        Map<String, String> params = new HashMap<>();
+        FutureCommonResponse futureCommonResponse = xtFuturesApiClient.getLeverageList(params);
+        System.out.println("result: " + futureCommonResponse);
+    }
+
+    @Test
+    public void testAdjustLeverage(){
+        Map<String, String> params = new HashMap<>();
+        params.put("symbol", "btc_usdt");
+        params.put("leverage", "20");
+        FutureCommonResponse futureCommonResponse = xtFuturesApiClient.adjustLeverage(params);
+        System.out.println("result: " + futureCommonResponse);
+    }
+
 }
