@@ -3,9 +3,10 @@ package com.xt.api.client.copytrade.futures;
 import com.xt.api.client.HttpProxyProperties;
 import com.xt.api.client.XtOkHttpClientBuilder;
 import com.xt.api.dto.FutureCommonResponse;
+import com.xt.api.dto.copytrade.futures.AdjustLeverageReqDTO;
 import com.xt.api.dto.copytrade.futures.CopyTradeProfitUpdateReqDTO;
 import com.xt.api.dto.copytrade.futures.FollowLeaderDTO;
-import com.xt.api.interceptor.XtSpotOkHttpInterceptor;
+import com.xt.api.interceptor.XtFutureOkHttpInterceptor;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
@@ -18,7 +19,7 @@ import java.util.Map;
  */
 public class XtFuturesCopyTradeApiClientImpl implements XtFuturesCopyTradeApiClient {
 
-    private final static String API_URL = "http://sapi.xt-qa.com";
+    private final static String API_URL = "http://fapi.xt-qa.com";
 
     private final XtFuturesCopyTradeApiService service;
 
@@ -26,7 +27,7 @@ public class XtFuturesCopyTradeApiClientImpl implements XtFuturesCopyTradeApiCli
         Retrofit retrofit =
                 new Retrofit.Builder()
                         .baseUrl(API_URL)
-                        .client(XtOkHttpClientBuilder.build(proxyProperties,new XtSpotOkHttpInterceptor()))
+                        .client(XtOkHttpClientBuilder.build(proxyProperties,new XtFutureOkHttpInterceptor()))
                         .addConverterFactory(JacksonConverterFactory.create())
                         .build();
         service = retrofit.create(XtFuturesCopyTradeApiService.class);
@@ -68,8 +69,8 @@ public class XtFuturesCopyTradeApiClientImpl implements XtFuturesCopyTradeApiCli
     }
 
     @Override
-    public FutureCommonResponse getAvailableSymbols(Map<String, String> params) {
-        return executeSync(service.getAvailableSymbols(params));
+    public FutureCommonResponse getPublicAvailableSymbols(Map<String, String> params) {
+        return executeSync(service.getPublicAvailableSymbols());
     }
 
     @Override
@@ -183,8 +184,8 @@ public class XtFuturesCopyTradeApiClientImpl implements XtFuturesCopyTradeApiCli
     }
 
     @Override
-    public FutureCommonResponse adjustLeverage(Map<String, String> params) {
-        return executeSync(service.adjustLeverage(params));
+    public FutureCommonResponse adjustLeverage(AdjustLeverageReqDTO request) {
+        return executeSync(service.adjustLeverage(request));
     }
 
     public FutureCommonResponse executeSync(Call<FutureCommonResponse> call) {

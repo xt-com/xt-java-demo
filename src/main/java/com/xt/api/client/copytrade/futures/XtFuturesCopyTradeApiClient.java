@@ -1,6 +1,7 @@
 package com.xt.api.client.copytrade.futures;
 
 import com.xt.api.dto.FutureCommonResponse;
+import com.xt.api.dto.copytrade.futures.AdjustLeverageReqDTO;
 import com.xt.api.dto.copytrade.futures.CopyTradeProfitUpdateReqDTO;
 import com.xt.api.dto.copytrade.futures.FollowLeaderDTO;
 import retrofit2.http.Body;
@@ -26,7 +27,7 @@ public interface XtFuturesCopyTradeApiClient {
 
     FutureCommonResponse stopProfitLoss(@Body CopyTradeProfitUpdateReqDTO dto);
 
-    FutureCommonResponse getAvailableSymbols(@QueryMap Map<String, String> params);
+    FutureCommonResponse getPublicAvailableSymbols(@QueryMap Map<String, String> params);
     FutureCommonResponse getFollowInfo(@QueryMap Map<String, String> params);
     FutureCommonResponse getLeaderInfo(@QueryMap Map<String, String> params);
     FutureCommonResponse getPublicLeaderInfo(@QueryMap Map<String, String> params);
@@ -57,6 +58,6 @@ public interface XtFuturesCopyTradeApiClient {
     FutureCommonResponse getUserSettings(@QueryMap Map<String, String> params);
 
     FutureCommonResponse getLeverageList(@QueryMap Map<String, String> params);
-    FutureCommonResponse adjustLeverage(@QueryMap Map<String, String> params);
+    FutureCommonResponse adjustLeverage(@Body AdjustLeverageReqDTO request);
 
 }

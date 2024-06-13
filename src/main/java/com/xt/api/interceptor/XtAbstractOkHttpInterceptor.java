@@ -20,8 +20,13 @@ import java.util.stream.Collectors;
  */
 public abstract class XtAbstractOkHttpInterceptor implements Interceptor {
 
-    protected static final String appKey = "ef07dd0c-df05-450d-8ea9-ee4c4e2c2539";
-    protected static final String secretKey = "4a4e753fca66ef4ec23726646c46e294237e7d78";
+//    protected static final String appKey = "ef07dd0c-df05-450d-8ea9-ee4c4e2c2539";
+//    protected static final String secretKey = "4a4e753fca66ef4ec23726646c46e294237e7d78";
+
+    protected static final String appKey = "69dba614-6817-406a-88f7-40a289a72304";
+    protected static final String secretKey = "2bb5edbfb4f22246741acbe88235b77b9338184d";
+
+
     protected static final String encry = "HmacSHA256";
     protected static final String contentType = "application/json";
     protected static final String window = "6000";
