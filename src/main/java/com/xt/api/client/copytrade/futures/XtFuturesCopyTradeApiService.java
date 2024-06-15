@@ -23,25 +23,25 @@ public interface XtFuturesCopyTradeApiService {
     Call<FutureCommonResponse> cancelLeader(@QueryMap Map<String, String> params);
 
     @POST("/future/copytrade/user/v1/copy-trade/choose-leader")
-    Call<FutureCommonResponse> chooseLeader(@Body FollowLeaderDTO request);
+    Call<FutureCommonResponse> chooseLeader(@QueryMap Map<String, String> params);
     @POST("/future/copytrade/user/v1/copy-trade/cancel-choose-leader")
     Call<FutureCommonResponse> cancelChooseLeader(@QueryMap Map<String, String> params);
 
     @POST("/future/copytrade/order/v1/copy-trade/close-all")
     Call<FutureCommonResponse> closeAllOrders(@QueryMap Map<String, String> params);
     @POST("/future/copytrade/order/v1/copy-trade/close")
-    Call<FutureCommonResponse> closeOrder(@QueryMap Map<String, Object> params);
+    Call<FutureCommonResponse> closeOrder(@QueryMap Map<String, String> params);
 
     @POST("/future/copytrade/order/v1/copy-trade/update-profit-stop")
-    Call<FutureCommonResponse> stopProfitLoss(@Body CopyTradeProfitUpdateReqDTO dto);
+    Call<FutureCommonResponse> stopProfitLoss(@QueryMap Map<String, String> params);
 
-    @GET("/future/copytrade/user/public/v1/public/copy-trade/symbol-list")
+    @GET("/future/copytrade/public/user/v1/public/copy-trade/symbol-list")
     Call<FutureCommonResponse> getPublicAvailableSymbols();
     @GET("/future/copytrade/user/v1/copy-trade/leader-relation")
     Call<FutureCommonResponse> getFollowInfo(@QueryMap Map<String, String> params);
     @GET("/future/copytrade/user/v1/copy-trade/leader-detail")
     Call<FutureCommonResponse> getLeaderInfo(@QueryMap Map<String, String> params);
-    @GET("/future/copytrade/user/public/v1/public/copy-trade/leader-detail-v2")
+    @GET("/future/copytrade/public/user/v1/public/copy-trade/leader-detail-v2")
     Call<FutureCommonResponse> getPublicLeaderInfo(@QueryMap Map<String, String> params);
 
     @GET("/future/copytrade/order/v1/copy-trade/follower-order-page")
@@ -64,19 +64,19 @@ public interface XtFuturesCopyTradeApiService {
     @GET("/future/copytrade/user/v1/copy-trade/my-profit-history")
     Call<FutureCommonResponse> getLeaderHistoryProfitTotal(@QueryMap Map<String, String> params);
 
-    @GET("/future/copytrade/order/public/v1/public/copy-trade/leader-order-page")
+    @GET("/future/copytrade/public/order/v1/public/copy-trade/leader-order-page")
     Call<FutureCommonResponse> getPublicCurrLeaderOrderPage(@QueryMap Map<String, String> params);
-    @GET("/future/copytrade/order/public/v1/public/copy-trade/leader-order-history")
+    @GET("/future/copytrade/public/order/v1/public/copy-trade/leader-order-history")
     Call<FutureCommonResponse> getPublicHisLeaderOrderPage(@QueryMap Map<String, String> params);
-    @GET("/future/copytrade/user/public/v1/public/copy-trade/leader-day-income")
+    @GET("/future/copytrade/public/user/v1/public/copy-trade/leader-day-income")
     Call<FutureCommonResponse> getPublicLeaderDayIncome(@QueryMap Map<String, String> params);
-    @GET("/future/copytrade/user/public/v1/public/copy-trade/leader-day-income-rate")
+    @GET("/future/copytrade/public/user/v1/public/copy-trade/leader-day-income-rate")
     Call<FutureCommonResponse> getPublicLeaderDayIncomeRate(@QueryMap Map<String, String> params);
-    @GET("/future/copytrade/user/public/v1/public/copy-trade/leader-follower-page")
+    @GET("/future/copytrade/public/user/v1/public/copy-trade/leader-follower-page")
     Call<FutureCommonResponse> getPublicLeaderFollowers(@QueryMap Map<String, String> params);
-    @GET("/future/copytrade/user/public/v1/public/copy-trade/leader-stats")
+    @GET("/future/copytrade/public/user/v1/public/copy-trade/leader-stats")
     Call<FutureCommonResponse> getPublicLeaderStats(@QueryMap Map<String, String> params);
-    @GET("/future/copytrade/user/public/v1/public/copy-trade/leader-symbol-prefer")
+    @GET("/future/copytrade/public/user/v1/public/copy-trade/leader-symbol-prefer")
     Call<FutureCommonResponse> getPublicLeaderSymbolPrefer(@QueryMap Map<String, String> params);
 
     @GET("/future/copytrade/user/v1/copy-trade/follower-leaders-page")

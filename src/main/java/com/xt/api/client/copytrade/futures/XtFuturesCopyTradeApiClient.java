@@ -19,13 +19,13 @@ public interface XtFuturesCopyTradeApiClient {
     FutureCommonResponse applyLeader(@QueryMap Map<String, String> params);
     FutureCommonResponse cancelLeader(@QueryMap Map<String, String> params);
 
-    FutureCommonResponse chooseLeader(@Body FollowLeaderDTO request);
+    FutureCommonResponse chooseLeader(@QueryMap Map<String, String> params);
     FutureCommonResponse cancelChooseLeader(@QueryMap Map<String, String> params);
 
     FutureCommonResponse closeAllOrders(@QueryMap Map<String, String> params);
-    FutureCommonResponse closeOrder(@QueryMap Map<String, Object> params);
+    FutureCommonResponse closeOrder(@QueryMap Map<String, String> params);
 
-    FutureCommonResponse stopProfitLoss(@Body CopyTradeProfitUpdateReqDTO dto);
+    FutureCommonResponse stopProfitLoss(@QueryMap Map<String, String> params);
 
     FutureCommonResponse getPublicAvailableSymbols(@QueryMap Map<String, String> params);
     FutureCommonResponse getFollowInfo(@QueryMap Map<String, String> params);

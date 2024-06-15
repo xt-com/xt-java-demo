@@ -19,31 +19,30 @@ public class FuturesCopyTradeApiClientTest {
     XtFuturesCopyTradeApiClientImpl xtFuturesApiClient = new XtFuturesCopyTradeApiClientImpl(null);
 
     @Test
-    public void testStopProfitLoss() {
-        CopyTradeProfitUpdateReqDTO request = CopyTradeProfitUpdateReqDTO.builder()
-                .trackNo(370761691765619904L)
-                .triggerProfitPrice(new BigDecimal("15.0"))
-                .triggerStopPrice(new BigDecimal("0.1"))
-                .triggerPriceType("MARK_PRICE")
-                .build();
-        FutureCommonResponse futureCommonResponse = xtFuturesApiClient.stopProfitLoss(request);
+    public void testStopProfitLoss() {// error={code=invalid_order
+        Map<String, String> params = new HashMap<>();
+        params.put("trackNo", "372118530973566977");
+        params.put("triggerPriceType", "MARK_PRICE");
+        params.put("triggerProfitPrice", "70000");
+        params.put("triggerStopPrice", "65000");
+        FutureCommonResponse futureCommonResponse = xtFuturesApiClient.stopProfitLoss(params);
         System.out.println("result: " + futureCommonResponse);
     }
 
     @Test
     public void testCloseAllOrders() {
         Map<String, String> params = new HashMap<>();
-        params.put("symbol", "btc_usdt");
-        params.put("closeLongShortType", "LONG");
+        // params.put("symbol", "btc_usdt");
+        // params.put("closeLongShortType", "LONG");
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.closeAllOrders(params);
         System.out.println("result: " + futureCommonResponse);
     }
 
     @Test
     public void testCloseOrder() {
-        Map<String, Object> params = new HashMap<>();
-        params.put("trackNo", 370800430378335424L);
-        params.put("leaderOrder", Boolean.TRUE);
+        Map<String, String> params = new HashMap<>();
+        params.put("trackNo", "372115029962852353");
+        params.put("leaderOrder", "1");
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.closeOrder(params);
         System.out.println("result: " + futureCommonResponse);
     }
@@ -75,7 +74,7 @@ public class FuturesCopyTradeApiClientTest {
     @Test
     public void testGetHisFollowerOrderPage() {
         Map<String, String> params = new HashMap<>();
-        params.put("type", "1");
+        params.put("type", "2");
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.getHisFollowerOrderPage(params);
         System.out.println("result: " + futureCommonResponse);
     }
@@ -98,13 +97,13 @@ public class FuturesCopyTradeApiClientTest {
     @Test
     public void testGetPublicLeaderInfo(){
         Map<String, String> params = new HashMap<>();
-        params.put("accountId", "370800430378335424");
+        params.put("accountId", "5605502353728");
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.getPublicLeaderInfo(params);
         System.out.println("result: " + futureCommonResponse);
     }
 
     @Test
-    public void testGetFollowerInfo(){// succ
+    public void testGetFollowerInfo(){
         Map<String, String> params = new HashMap<>();
         params.put("leaderAccountId", "5605502353728");
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.getFollowInfo(params);
@@ -112,7 +111,7 @@ public class FuturesCopyTradeApiClientTest {
     }
 
     @Test
-    public void testGetUserSettings(){// succ
+    public void testGetUserSettings(){
         Map<String, String> params = new HashMap<>();
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.getUserSettings(params);
         System.out.println("result: " + futureCommonResponse);
@@ -122,7 +121,7 @@ public class FuturesCopyTradeApiClientTest {
     public void testApplyLeader(){
         Map<String, String> params = new HashMap<>();
         params.put("nickName", "123abc");
-        params.put("images", "http://123.png,http://345.png");
+        params.put("images", "https://a.static-global.com/1/user/common/bf5f42f8-e815-4817-9c13-2b14b4af24e0-1709539990384.png");
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.applyLeader(params);
         System.out.println("result: " + futureCommonResponse);
     }
@@ -136,40 +135,36 @@ public class FuturesCopyTradeApiClientTest {
 
     @Test
     public void testChooseLeader(){
-        FollowLeaderDTO request = FollowLeaderDTO.builder()
-                .leaderAccountId(5605502353728L)
-                .followType("RATE")
-                .followVal(new BigDecimal("1"))
-                .autoFollowSymbol(true)
-                .followLoss(null)
-                .followLossOperate("LEADER_CLOSE")
-                .symbols("btc_usdt,eth_usdt,xrp_usdt")
-                .triggerStopRate(null)
-                .triggerProfitRate(null)
-                .build();
-        FutureCommonResponse futureCommonResponse = xtFuturesApiClient.chooseLeader(request);
+        Map<String, String> params = new HashMap<>();
+        params.put("leaderAccountId", "5372510536645");
+        params.put("followType", "FUND");
+        params.put("followVal", "10");
+        params.put("autoFollowSymbol", "1");
+        params.put("followLossOperate", "LEADER_CLOSE");
+        params.put("symbols", "btc_usdt,eth_usdt,xrp_usdt,bnb_usdt,trb_usdt,vsys_usdt");
+        FutureCommonResponse futureCommonResponse = xtFuturesApiClient.chooseLeader(params);
         System.out.println("result: " + futureCommonResponse);
     }
 
     @Test
-    public void testCancelChooseLeader(){// succ
+    public void testCancelChooseLeader(){
         Map<String, String> params = new HashMap<>();
-        params.put("leaderAccountId", "5605502353728");
+        params.put("leaderAccountId", "5372510536645");
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.cancelChooseLeader(params);
         System.out.println("result: " + futureCommonResponse);
     }
 
     @Test
-    public void testGetMyFollowLeaderList(){// suc
+    public void testGetMyFollowLeaderList(){
         Map<String, String> params = new HashMap<>();
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.getMyFollowLeaderList(params);
         System.out.println("result: " + futureCommonResponse);
     }
 
     @Test
-    public void testGetMyFollowLeaderHistory(){// suc
+    public void testGetMyFollowLeaderHistory(){
         Map<String, String> params = new HashMap<>();
-        params.put("type", "2");
+        params.put("type", "1");
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.getMyFollowLeaderHistory(params);
         System.out.println("result: " + futureCommonResponse);
     }
@@ -177,8 +172,8 @@ public class FuturesCopyTradeApiClientTest {
     @Test
     public void testGetPublicLeaderStats(){
         Map<String, String> params = new HashMap<>();
-        params.put("accountId", "5589391507863");
-        params.put("days", "7");
+        params.put("accountId", "5605502353728");
+        params.put("days", "30");
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.getPublicLeaderStats(params);
         System.out.println("result: " + futureCommonResponse);
     }
@@ -186,7 +181,7 @@ public class FuturesCopyTradeApiClientTest {
     @Test
     public void testGetPublicLeaderDayIncome(){
         Map<String, String> params = new HashMap<>();
-        params.put("accountId", "5589391507863");
+        params.put("accountId", "5605502353728");
         params.put("days", "7");
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.getPublicLeaderDayIncome(params);
         System.out.println("result: " + futureCommonResponse);
@@ -195,7 +190,7 @@ public class FuturesCopyTradeApiClientTest {
     @Test
     public void testGetPublicLeaderDayIncomeRate(){
         Map<String, String> params = new HashMap<>();
-        params.put("accountId", "5589391507863");
+        params.put("accountId", "5605502353728");
         params.put("days", "7");
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.getPublicLeaderDayIncomeRate(params);
         System.out.println("result: " + futureCommonResponse);
@@ -204,8 +199,8 @@ public class FuturesCopyTradeApiClientTest {
     @Test
     public void testGetLeaderTradingPrefer(){
         Map<String, String> params = new HashMap<>();
-        params.put("accountId", "5589391507863");
-        params.put("recentDays", "7");
+        params.put("accountId", "5605502353728");
+        params.put("recentDays", "30");
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.getPublicLeaderSymbolPrefer(params);
         System.out.println("result: " + futureCommonResponse);
     }
@@ -213,8 +208,8 @@ public class FuturesCopyTradeApiClientTest {
     @Test
     public void testGetPublicCurrLeaderOrderPage(){
         Map<String, String> params = new HashMap<>();
-        params.put("leaderAccountId", "5589391507863");
-        params.put("symbol", "ont_usdt");
+        params.put("leaderAccountId", "5605502353728");
+        //params.put("symbol", "btc_usdt");
         params.put("type", "1");
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.getPublicCurrLeaderOrderPage(params);
         System.out.println("result: " + futureCommonResponse);
@@ -223,8 +218,8 @@ public class FuturesCopyTradeApiClientTest {
     @Test
     public void testGetPublicHisLeaderOrderPage(){
         Map<String, String> params = new HashMap<>();
-        params.put("leaderAccountId", "5589391507863");
-        params.put("symbol", "ont_usdt");
+        params.put("leaderAccountId", "5605502353728");
+        params.put("symbol", "btc_usdt");
         params.put("type", "1");
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.getPublicHisLeaderOrderPage(params);
         System.out.println("result: " + futureCommonResponse);
@@ -233,7 +228,7 @@ public class FuturesCopyTradeApiClientTest {
     @Test
     public void testGetPublicLeaderFollowers(){
         Map<String, String> params = new HashMap<>();
-        params.put("leaderAccountId","5589391507863");
+        params.put("leaderAccountId","5605502353728");
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.getPublicLeaderFollowers(params);
         System.out.println("result: " + futureCommonResponse);
     }
@@ -275,17 +270,17 @@ public class FuturesCopyTradeApiClientTest {
     }
 
     @Test
-    public void testGetLeverageList(){// succ
+    public void testGetLeverageList(){
         Map<String, String> params = new HashMap<>();
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.getLeverageList(params);
         System.out.println("result: " + futureCommonResponse);
     }
 
     @Test
-    public void testAdjustLeverage(){
+    public void testAdjustLeverage(){ // thanos-position-impl 拒绝 error={code=platform_reject, msg=platform reject, args=null})
         AdjustLeverageReqDTO request = AdjustLeverageReqDTO.builder()
                 .symbol("btc_usdt")
-                .leverage(10)
+                .leverage(3)
                 .build();
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.adjustLeverage(request);
         System.out.println("result: " + futureCommonResponse);
