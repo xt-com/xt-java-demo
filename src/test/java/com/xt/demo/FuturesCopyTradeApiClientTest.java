@@ -19,12 +19,13 @@ public class FuturesCopyTradeApiClientTest {
     XtFuturesCopyTradeApiClientImpl xtFuturesApiClient = new XtFuturesCopyTradeApiClientImpl(null);
 
     @Test
-    public void testStopProfitLoss() {// error={code=invalid_order
+    public void testStopProfitLoss() {
         Map<String, String> params = new HashMap<>();
-        params.put("trackNo", "372118530973566977");
+        params.put("trackNo", "372123709462611969");
         params.put("triggerPriceType", "MARK_PRICE");
         params.put("triggerProfitPrice", "70000");
         params.put("triggerStopPrice", "65000");
+        params.put("leaderOrder", "1");
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.stopProfitLoss(params);
         System.out.println("result: " + futureCommonResponse);
     }
@@ -277,10 +278,11 @@ public class FuturesCopyTradeApiClientTest {
     }
 
     @Test
-    public void testAdjustLeverage(){ // thanos-position-impl 拒绝 error={code=platform_reject, msg=platform reject, args=null})
+    public void testAdjustLeverage(){
         AdjustLeverageReqDTO request = AdjustLeverageReqDTO.builder()
                 .symbol("btc_usdt")
                 .leverage(3)
+                .positionSide("LONG")
                 .build();
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.adjustLeverage(request);
         System.out.println("result: " + futureCommonResponse);

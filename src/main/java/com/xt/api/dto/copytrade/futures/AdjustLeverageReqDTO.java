@@ -12,4 +12,6 @@ public class AdjustLeverageReqDTO {
 
     private Integer leverage;
 
+    private String positionSide;
+
 }
