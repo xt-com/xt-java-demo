@@ -3,11 +3,8 @@ package com.xt.demo;
 import com.xt.api.client.copytrade.futures.XtFuturesCopyTradeApiClientImpl;
 import com.xt.api.dto.FutureCommonResponse;
 import com.xt.api.dto.copytrade.futures.AdjustLeverageReqDTO;
-import com.xt.api.dto.copytrade.futures.CopyTradeProfitUpdateReqDTO;
-import com.xt.api.dto.copytrade.futures.FollowLeaderDTO;
 import org.junit.Test;
 
-import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 

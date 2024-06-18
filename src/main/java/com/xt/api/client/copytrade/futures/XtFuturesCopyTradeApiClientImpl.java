@@ -17,7 +17,7 @@ import java.util.Map;
  */
 public class XtFuturesCopyTradeApiClientImpl implements XtFuturesCopyTradeApiClient {
 
-    private final static String API_URL = "http://fapi.xt-qa.com";
+    private final static String API_URL = "https://sapi.xt.com";
 
     private final XtFuturesCopyTradeApiService service;
 

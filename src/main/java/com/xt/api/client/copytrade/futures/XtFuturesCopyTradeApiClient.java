@@ -2,8 +2,6 @@ package com.xt.api.client.copytrade.futures;
 
 import com.xt.api.dto.FutureCommonResponse;
 import com.xt.api.dto.copytrade.futures.AdjustLeverageReqDTO;
-import com.xt.api.dto.copytrade.futures.CopyTradeProfitUpdateReqDTO;
-import com.xt.api.dto.copytrade.futures.FollowLeaderDTO;
 import retrofit2.http.Body;
 import retrofit2.http.QueryMap;
 
