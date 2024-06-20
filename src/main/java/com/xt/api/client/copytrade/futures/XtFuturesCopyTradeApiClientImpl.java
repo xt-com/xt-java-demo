@@ -87,6 +87,11 @@ public class XtFuturesCopyTradeApiClientImpl implements XtFuturesCopyTradeApiCli
     }
 
     @Override
+    public FutureCommonResponse getCurrFollowerOrderList(Map<String, String> params) {
+        return executeSync(service.getCurrFollowerOrderList(params));
+    }
+
+    @Override
     public FutureCommonResponse getCurrFollowerOrderPage(Map<String, String> params) {
         return executeSync(service.getCurrFollowerOrderPage(params));
     }
@@ -94,6 +99,11 @@ public class XtFuturesCopyTradeApiClientImpl implements XtFuturesCopyTradeApiCli
     @Override
     public FutureCommonResponse getHisFollowerOrderPage(Map<String, String> params) {
         return executeSync(service.getHisFollowerOrderPage(params));
+    }
+
+    @Override
+    public FutureCommonResponse getCurrLeaderOrderList(Map<String, String> params) {
+        return executeSync(service.getCurrLeaderOrderList(params));
     }
 
     @Override

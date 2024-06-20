@@ -30,9 +30,11 @@ public interface XtFuturesCopyTradeApiClient {
     FutureCommonResponse getLeaderInfo(@QueryMap Map<String, String> params);
     FutureCommonResponse getPublicLeaderInfo(@QueryMap Map<String, String> params);
 
+    FutureCommonResponse getCurrFollowerOrderList(@QueryMap Map<String, String> params);
     FutureCommonResponse getCurrFollowerOrderPage(@QueryMap Map<String, String> params);
     FutureCommonResponse getHisFollowerOrderPage(@QueryMap Map<String, String> params);
 
+    FutureCommonResponse getCurrLeaderOrderList(@QueryMap Map<String, String> params);
     FutureCommonResponse getCurrLeaderOrderPage(@QueryMap Map<String, String> params);
     FutureCommonResponse getHisLeaderOrderPage(@QueryMap Map<String, String> params);
 

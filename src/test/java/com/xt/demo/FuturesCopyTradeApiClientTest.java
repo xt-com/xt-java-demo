@@ -46,6 +46,14 @@ public class FuturesCopyTradeApiClientTest {
     }
 
     @Test
+    public void testGetCurrLeaderOrderList() {
+        Map<String, String> params = new HashMap<>();
+        params.put("type", "1");
+        FutureCommonResponse futureCommonResponse = xtFuturesApiClient.getCurrLeaderOrderList(params);
+        System.out.println("result: " + futureCommonResponse);
+    }
+
+    @Test
     public void testGetCurrLeaderOrderPage() {
         Map<String, String> params = new HashMap<>();
         params.put("type", "1");
@@ -58,6 +66,14 @@ public class FuturesCopyTradeApiClientTest {
         Map<String, String> params = new HashMap<>();
         params.put("type", "1");
         FutureCommonResponse futureCommonResponse = xtFuturesApiClient.getHisLeaderOrderPage(params);
+        System.out.println("result: " + futureCommonResponse);
+    }
+
+    @Test
+    public void testGetCurrFollowerOrderList() {
+        Map<String, String> params = new HashMap<>();
+        params.put("type", "1");
+        FutureCommonResponse futureCommonResponse = xtFuturesApiClient.getCurrFollowerOrderList(params);
         System.out.println("result: " + futureCommonResponse);
     }
 

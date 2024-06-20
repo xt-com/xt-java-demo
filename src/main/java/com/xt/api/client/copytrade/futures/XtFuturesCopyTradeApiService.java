@@ -42,11 +42,15 @@ public interface XtFuturesCopyTradeApiService {
     @GET("/future/copytrade/public/user/v1/public/copy-trade/leader-detail-v2")
     Call<FutureCommonResponse> getPublicLeaderInfo(@QueryMap Map<String, String> params);
 
+    @GET("/future/copytrade/order/v1/copy-trade/follower-order-list")
+    Call<FutureCommonResponse> getCurrFollowerOrderList(@QueryMap Map<String, String> params);
     @GET("/future/copytrade/order/v1/copy-trade/follower-order-page")
     Call<FutureCommonResponse> getCurrFollowerOrderPage(@QueryMap Map<String, String> params);
     @GET("/future/copytrade/order/v1/copy-trade/follower-order-history")
     Call<FutureCommonResponse> getHisFollowerOrderPage(@QueryMap Map<String, String> params);
 
+    @GET("/future/copytrade/order/v1/copy-trade/leader-order-list")
+    Call<FutureCommonResponse> getCurrLeaderOrderList(@QueryMap Map<String, String> params);
     @GET("/future/copytrade/order/v1/copy-trade/leader-order-page")
     Call<FutureCommonResponse> getCurrLeaderOrderPage(@QueryMap Map<String, String> params);
     @GET("/future/copytrade/order/v1/copy-trade/leader-order-history")
