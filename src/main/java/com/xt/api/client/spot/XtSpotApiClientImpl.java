@@ -6,6 +6,7 @@ import com.xt.api.dto.CommonResponse;
 
 import com.xt.api.dto.spot.NetworthUpdateRequest;
 import com.xt.api.dto.spot.SpotPostOrderRequest;
+import com.xt.api.dto.spot.SpotUpdateOrderRequest;
 import com.xt.api.interceptor.XtSpotOkHttpInterceptor;
 import retrofit2.Call;
 import retrofit2.Response;
@@ -51,6 +52,11 @@ public class XtSpotApiClientImpl implements XtSpotApiClient{
     @Override
     public CommonResponse delOrder(Long id) {
         return executeSync(service.delOrder(id));
+    }
+
+    @Override
+    public CommonResponse updateOrder(Long id, SpotUpdateOrderRequest request) {
+        return executeSync(service.updateOrder(id,request));
     }
 
     @Override

@@ -157,8 +157,8 @@ public class RestTest {
     public void deposit() {
         String uri = "/v4/deposit/address";
         Map<String, Object> param = new HashMap<>();
-        param.put("chain", "11111");
-        param.put("currency", "btc");
+        param.put("chain", "BNB Smart Chain");
+        param.put("currency", "usdt");
         System.out.println("result====" + XtHttpUtil.get(uri, param));
     }
 

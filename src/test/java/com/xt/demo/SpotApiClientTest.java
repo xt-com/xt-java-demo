@@ -4,6 +4,7 @@ import com.xt.api.client.spot.XtSpotApiClientImpl;
 import com.xt.api.dto.CommonResponse;
 import com.xt.api.dto.spot.NetworthUpdateRequest;
 import com.xt.api.dto.spot.SpotPostOrderRequest;
+import com.xt.api.dto.spot.SpotUpdateOrderRequest;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -24,7 +25,7 @@ public class SpotApiClientTest {
                 .type("LIMIT")
                 .timeInForce("GTC")
                 .bizType("SPOT")
-                .price("64814.16")
+                .price("63000")
                 .quantity("0.001")
                 .media("btok")
                 .mediaChannel("btok123")
@@ -55,6 +56,12 @@ public class SpotApiClientTest {
     public void netWorth() {
         NetworthUpdateRequest request = NetworthUpdateRequest.builder().symbol("btc3l_usdt").netWorth(BigDecimal.valueOf(1.2)).build();
         CommonResponse commonResponse = xtSpotApiClient.netWorth(request);
+        System.out.println("result:"+commonResponse);
+    }
+
+    @Test
+    public void updateOrder(){
+        CommonResponse commonResponse = xtSpotApiClient.updateOrder(407309222976613568L, SpotUpdateOrderRequest.builder().quantity("0.002").price("63010").build());
         System.out.println("result:"+commonResponse);
     }
 }

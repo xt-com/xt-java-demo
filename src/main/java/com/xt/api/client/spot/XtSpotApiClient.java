@@ -3,6 +3,7 @@ package com.xt.api.client.spot;
 import com.xt.api.dto.CommonResponse;
 import com.xt.api.dto.spot.NetworthUpdateRequest;
 import com.xt.api.dto.spot.SpotPostOrderRequest;
+import com.xt.api.dto.spot.SpotUpdateOrderRequest;
 import retrofit2.http.Body;
 
 
@@ -20,6 +21,8 @@ public interface XtSpotApiClient {
     CommonResponse queryOrder(Long orderId);
 
     CommonResponse delOrder(Long id);
+
+    CommonResponse updateOrder(Long id, SpotUpdateOrderRequest request);
 
     CommonResponse netWorth(NetworthUpdateRequest request);;
 }
