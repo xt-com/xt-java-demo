@@ -1,6 +1,8 @@
 package com.xt.api.client.spot;
 
 import com.xt.api.dto.CommonResponse;
+import com.xt.api.dto.nft.NftDepositRequest;
+import com.xt.api.dto.nft.NftWithdrawRequest;
 import com.xt.api.dto.spot.NetworthUpdateRequest;
 import com.xt.api.dto.spot.SpotPostOrderRequest;
 import com.xt.api.dto.spot.SpotUpdateOrderRequest;
@@ -24,5 +26,9 @@ public interface XtSpotApiClient {
 
     CommonResponse updateOrder(Long id, SpotUpdateOrderRequest request);
 
-    CommonResponse netWorth(NetworthUpdateRequest request);;
+    CommonResponse netWorth(NetworthUpdateRequest request);
+
+    CommonResponse nftDeposit(NftDepositRequest request);
+
+    CommonResponse nftWithdraw(NftWithdrawRequest request);
 }

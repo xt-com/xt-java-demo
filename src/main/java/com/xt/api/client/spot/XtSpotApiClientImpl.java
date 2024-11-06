@@ -4,6 +4,8 @@ import com.xt.api.client.HttpProxyProperties;
 import com.xt.api.client.XtOkHttpClientBuilder;
 import com.xt.api.dto.CommonResponse;
 
+import com.xt.api.dto.nft.NftDepositRequest;
+import com.xt.api.dto.nft.NftWithdrawRequest;
 import com.xt.api.dto.spot.NetworthUpdateRequest;
 import com.xt.api.dto.spot.SpotPostOrderRequest;
 import com.xt.api.dto.spot.SpotUpdateOrderRequest;
@@ -64,6 +66,15 @@ public class XtSpotApiClientImpl implements XtSpotApiClient{
         return executeSync(service.netWorth(request));
     }
 
+    @Override
+    public CommonResponse nftDeposit(NftDepositRequest request){
+        return executeSync(service.nftDeposit(request));
+    }
+
+    @Override
+    public CommonResponse nftWithdraw(NftWithdrawRequest request){
+        return executeSync(service.nftWithdraw(request));
+    }
 
     public CommonResponse executeSync(Call<CommonResponse> call) {
         try {

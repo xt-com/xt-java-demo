@@ -2,6 +2,8 @@ package com.xt.demo;
 
 import com.xt.api.client.spot.XtSpotApiClientImpl;
 import com.xt.api.dto.CommonResponse;
+import com.xt.api.dto.nft.NftDepositRequest;
+import com.xt.api.dto.nft.NftWithdrawRequest;
 import com.xt.api.dto.spot.NetworthUpdateRequest;
 import com.xt.api.dto.spot.SpotPostOrderRequest;
 import com.xt.api.dto.spot.SpotUpdateOrderRequest;
@@ -63,5 +65,26 @@ public class SpotApiClientTest {
     public void updateOrder(){
         CommonResponse commonResponse = xtSpotApiClient.updateOrder(407309222976613568L, SpotUpdateOrderRequest.builder().quantity("0.002").price("63010").build());
         System.out.println("result:"+commonResponse);
+    }
+
+    @Test
+    public void nftDeposit() {
+        NftDepositRequest nftDepositRequest = NftDepositRequest.builder()
+                .currencyId(1L)
+                .serial("")
+                .passcode("")
+                .build();
+        CommonResponse commonResponse = xtSpotApiClient.nftDeposit(nftDepositRequest);
+        System.out.println("result:" + commonResponse);
+    }
+
+    @Test
+    public void nftWithdraw() {
+        NftWithdrawRequest nftWithdrawRequest = NftWithdrawRequest.builder()
+                .currencyId(1L)
+                .serial("")
+                .build();
+        CommonResponse commonResponse = xtSpotApiClient.nftWithdraw(nftWithdrawRequest);
+        System.out.println("result:" + commonResponse);
     }
 }

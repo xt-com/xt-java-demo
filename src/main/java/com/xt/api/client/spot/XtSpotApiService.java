@@ -1,6 +1,8 @@
 package com.xt.api.client.spot;
 
 import com.xt.api.dto.CommonResponse;
+import com.xt.api.dto.nft.NftDepositRequest;
+import com.xt.api.dto.nft.NftWithdrawRequest;
 import com.xt.api.dto.spot.NetworthUpdateRequest;
 import com.xt.api.dto.spot.SpotPostOrderRequest;
 import com.xt.api.dto.spot.SpotUpdateOrderRequest;
@@ -30,4 +32,10 @@ public interface XtSpotApiService {
 
     @PUT("/v4/etf/net-worth")
     Call<CommonResponse> netWorth(@Body NetworthUpdateRequest request);
+
+    @POST("/v4/nft/deposit")
+    Call<CommonResponse> nftDeposit(@Body NftDepositRequest request);
+
+    @POST("/v4/nft/withdraw")
+    Call<CommonResponse> nftWithdraw(@Body NftWithdrawRequest request);
 }
