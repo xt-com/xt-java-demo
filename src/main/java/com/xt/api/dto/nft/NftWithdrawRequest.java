@@ -11,7 +11,7 @@ import lombok.Data;
 @Builder
 public class NftWithdrawRequest {
 
-    private Long currencyId;
+    private String currency;
 
     private String serial;
 }

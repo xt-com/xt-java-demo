@@ -70,9 +70,9 @@ public class SpotApiClientTest {
     @Test
     public void nftDeposit() {
         NftDepositRequest nftDepositRequest = NftDepositRequest.builder()
-                .currencyId(1L)
-                .serial("")
-                .passcode("")
+                .currency("BTCsn")
+                .serial("123")
+                .passcode("123")
                 .build();
         CommonResponse commonResponse = xtSpotApiClient.nftDeposit(nftDepositRequest);
         System.out.println("result:" + commonResponse);
@@ -81,8 +81,8 @@ public class SpotApiClientTest {
     @Test
     public void nftWithdraw() {
         NftWithdrawRequest nftWithdrawRequest = NftWithdrawRequest.builder()
-                .currencyId(1L)
-                .serial("")
+                .currency("BTCsn")
+                .serial("123")
                 .build();
         CommonResponse commonResponse = xtSpotApiClient.nftWithdraw(nftWithdrawRequest);
         System.out.println("result:" + commonResponse);

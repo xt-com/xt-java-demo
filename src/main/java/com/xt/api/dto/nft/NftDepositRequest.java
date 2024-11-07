@@ -11,7 +11,7 @@ import lombok.Data;
 @Builder
 public class NftDepositRequest {
 
-    private Long currencyId;
+    private String currency;
 
     private String serial;
 
