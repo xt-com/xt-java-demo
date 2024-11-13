@@ -87,4 +87,10 @@ public class SpotApiClientTest {
         CommonResponse commonResponse = xtSpotApiClient.nftWithdraw(nftWithdrawRequest);
         System.out.println("result:" + commonResponse);
     }
+
+    @Test
+    public void nftHistoryOrder() {
+        CommonResponse commonResponse = xtSpotApiClient.nftHistoryOrder(2, null, null, null, null, 1, 10);
+        System.out.println("result:" + commonResponse);
+    }
 }

@@ -38,4 +38,10 @@ public interface XtSpotApiService {
 
     @POST("/v4/nft/withdraw")
     Call<CommonResponse> nftWithdraw(@Body NftWithdrawRequest request);
+
+    @GET("/v4/nft/order/history")
+    Call<CommonResponse> nftHistoryOrder(@Query("type") Integer type,
+                                         @Query("status") Integer status, @Query("currencyId") Long currencyId,
+                                         @Query("startTime") Long startTime, @Query("endTime") Long endTime,
+                                         @Query("pageIndex") Integer pageIndex, @Query("pageSize") Integer pageSize);
 }

@@ -6,7 +6,9 @@ import com.xt.api.dto.nft.NftWithdrawRequest;
 import com.xt.api.dto.spot.NetworthUpdateRequest;
 import com.xt.api.dto.spot.SpotPostOrderRequest;
 import com.xt.api.dto.spot.SpotUpdateOrderRequest;
+import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Query;
 
 
 /**
@@ -31,4 +33,9 @@ public interface XtSpotApiClient {
     CommonResponse nftDeposit(NftDepositRequest request);
 
     CommonResponse nftWithdraw(NftWithdrawRequest request);
+
+    CommonResponse nftHistoryOrder(@Query("type") Integer type,
+                                         @Query("status") Integer status, @Query("currencyId") Long currencyId,
+                                         @Query("startTime") Long startTime, @Query("endTime") Long endTime,
+                                         @Query("pageIndex") Integer pageIndex, @Query("pageSize") Integer pageSize);
 }

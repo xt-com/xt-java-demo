@@ -76,6 +76,11 @@ public class XtSpotApiClientImpl implements XtSpotApiClient{
         return executeSync(service.nftWithdraw(request));
     }
 
+    @Override
+    public CommonResponse nftHistoryOrder(Integer type, Integer status, Long currencyId, Long startTime, Long endTime, Integer pageIndex, Integer pageSize) {
+        return executeSync(service.nftHistoryOrder(type,status,currencyId,startTime,endTime,pageIndex,pageSize));
+    }
+
     public CommonResponse executeSync(Call<CommonResponse> call) {
         try {
             Response<CommonResponse> response = call.execute();
