@@ -43,5 +43,5 @@ public interface XtSpotApiService {
     Call<CommonResponse> nftHistoryOrder(@Query("type") Integer type,
                                          @Query("status") Integer status, @Query("currencyId") String currency,
                                          @Query("startTime") Long startTime, @Query("endTime") Long endTime,
-                                         @Query("pageIndex") Integer pageIndex, @Query("pageSize") Integer pageSize);
+                                         @Query("page") Integer page, @Query("size") Integer size);
 }
