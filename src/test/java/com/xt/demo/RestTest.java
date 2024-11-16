@@ -166,13 +166,10 @@ public class RestTest {
     public void withdraw() {
         String uri = "/v4/withdraw";
         Map<String, Object> param = new HashMap<>();
-        param.put("symbol", "btc_usdt");
-        param.put("side", "BUY");
-        param.put("type", "LIMIT");
-        param.put("timeInForce", "GTC");
-        param.put("bizType", "SPOT");
-        param.put("price", "3");
-        param.put("quantity", "2");
+        param.put("chain", "Tron");
+        param.put("currency","USDT");
+        param.put("amount",1000);
+        param.put("address","xxxxx");
         System.out.println("json===="+ JSON.toJSONString(param));
         System.out.println("result====" + XtHttpUtil.post(uri,JSON.toJSONString(param)));
     }
