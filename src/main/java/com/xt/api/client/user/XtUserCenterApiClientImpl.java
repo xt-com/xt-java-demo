@@ -9,6 +9,8 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
+import java.util.List;
+
 
 /**
  * @author zhouzhuang
@@ -33,6 +35,16 @@ public class XtUserCenterApiClientImpl implements XtUserCenterApiClient {
     @Override
     public CommonResponse getUserStatistics(String uid, String startTime, String endTime) {
         return executeSync(service.getUserStatistics(uid,startTime,endTime));
+    }
+
+    @Override
+    public CommonResponse getUserInfo(Long uid) {
+        return executeSync(service.getUserInfo(uid));
+    }
+
+    @Override
+    public CommonResponse getBatchUserInfo(List<Long> uidList, Integer pageNum, Integer pageSize) {
+        return executeSync(service.getBatchUserInfo(uidList,pageNum,pageSize));
     }
 
     public CommonResponse executeSync(Call<CommonResponse> call) {

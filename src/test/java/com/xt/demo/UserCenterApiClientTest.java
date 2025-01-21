@@ -1,16 +1,10 @@
 package com.xt.demo;
 
-import com.xt.api.client.spot.XtSpotApiClientImpl;
 import com.xt.api.client.user.XtUserCenterApiClientImpl;
 import com.xt.api.dto.CommonResponse;
-import com.xt.api.dto.nft.NftDepositRequest;
-import com.xt.api.dto.nft.NftWithdrawRequest;
-import com.xt.api.dto.spot.NetworthUpdateRequest;
-import com.xt.api.dto.spot.SpotPostOrderRequest;
-import com.xt.api.dto.spot.SpotUpdateOrderRequest;
 import org.junit.Test;
 
-import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * SPOT Business
@@ -24,6 +18,18 @@ public class UserCenterApiClientTest {
     @Test
     public void getUserStatistics() {
         CommonResponse commonResponse = xtUserCenterApiClient.getUserStatistics("2795815175054","2023-05-01","2023-05-02");
+        System.out.println("result:"+commonResponse);
+    }
+
+    @Test
+    public void getUserInfo() {
+        CommonResponse commonResponse = xtUserCenterApiClient.getUserInfo(6975805522411L);
+        System.out.println("result:"+commonResponse);
+    }
+
+    @Test
+    public void getBatchUserInfo(){
+        CommonResponse commonResponse = xtUserCenterApiClient.getBatchUserInfo(List.of(6975805522411L),1,5);
         System.out.println("result:"+commonResponse);
     }
 }
