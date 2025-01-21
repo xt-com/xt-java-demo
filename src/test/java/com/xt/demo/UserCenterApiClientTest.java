@@ -22,8 +22,8 @@ public class UserCenterApiClientTest {
     XtUserCenterApiClientImpl xtUserCenterApiClient = new XtUserCenterApiClientImpl(null);
 
     @Test
-    public void getOrder() {
-        CommonResponse commonResponse = xtUserCenterApiClient.getUserBalance(351569051824340480L);
+    public void getUserStatistics() {
+        CommonResponse commonResponse = xtUserCenterApiClient.getUserStatistics("2795815175054","2023-05-01","2023-05-02");
         System.out.println("result:"+commonResponse);
     }
 }

@@ -9,5 +9,5 @@ import com.xt.api.dto.CommonResponse;
  */
 public interface XtUserCenterApiClient {
 
-    CommonResponse getUserBalance(Long userId);
+    CommonResponse getUserStatistics(String uid, String startTime, String endTime) ;
 }

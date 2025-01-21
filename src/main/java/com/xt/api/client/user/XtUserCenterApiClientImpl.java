@@ -31,8 +31,8 @@ public class XtUserCenterApiClientImpl implements XtUserCenterApiClient {
     }
 
     @Override
-    public CommonResponse getUserBalance(Long id) {
-        return executeSync(service.getUserBalance(id));
+    public CommonResponse getUserStatistics(String uid, String startTime, String endTime) {
+        return executeSync(service.getUserStatistics(uid,startTime,endTime));
     }
 
     public CommonResponse executeSync(Call<CommonResponse> call) {

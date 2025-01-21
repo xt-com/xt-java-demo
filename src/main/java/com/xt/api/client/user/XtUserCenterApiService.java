@@ -10,6 +10,7 @@ import retrofit2.http.*;
  */
 public interface XtUserCenterApiService {
 
-    @GET("/v4/referal/invite/user/balance")
-    Call<CommonResponse> getUserBalance(@Query("uid") Long uid);
+    @GET("/v4/referal/invite/statistics")
+    Call<CommonResponse> getUserStatistics(@Query("uid") String uid,@Query("startTime") String startTime,
+                                           @Query("endTime") String endTime);
 }
