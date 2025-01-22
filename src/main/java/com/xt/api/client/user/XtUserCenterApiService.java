@@ -22,4 +22,11 @@ public interface XtUserCenterApiService {
 
     @GET("/v4/referal/multi/single/user/info")
     Call<CommonResponse> getBatchUserInfo(@Query("uidList") List<Long> uidList, @Query("pageNum") Integer pageNum, @Query("pageSize") Integer pageSize);
+
+    @GET("/v4/referal/multi/single/user/info")
+    Call<CommonResponse> getUserDetail(@Query("startTime") Long startTime, @Query("endTime") Long endTime, @Query("inviteCode") String inviteCode,
+                                       @Query("pageNum") Integer pageNum, @Query("pageSize") Integer pageSize, @Query("type") Integer type);
+
+    @GET("/v4/referal/invite/kyc/status")
+    Call<CommonResponse> getUserState(@Query("uid") Long uid);
 }

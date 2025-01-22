@@ -32,4 +32,16 @@ public class UserCenterApiClientTest {
         CommonResponse commonResponse = xtUserCenterApiClient.getBatchUserInfo(List.of(6975805522411L),1,5);
         System.out.println("result:"+commonResponse);
     }
+
+    @Test
+    public void getUserDetail(){
+        CommonResponse commonResponse = xtUserCenterApiClient.getUserDetail(1735574400000L,1735574400000L,"123",1,5,1);
+        System.out.println("result:"+commonResponse);
+    }
+
+    @Test
+    public void getUserState() {
+        CommonResponse commonResponse = xtUserCenterApiClient.getUserState(6975805522411L);
+        System.out.println("result:"+commonResponse);
+    }
 }

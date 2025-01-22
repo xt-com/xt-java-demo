@@ -47,6 +47,16 @@ public class XtUserCenterApiClientImpl implements XtUserCenterApiClient {
         return executeSync(service.getBatchUserInfo(uidList,pageNum,pageSize));
     }
 
+    @Override
+    public CommonResponse getUserDetail(Long startTime, Long endTime, String inviteCode, Integer pageNum, Integer pageSize, Integer type) {
+        return executeSync(service.getUserDetail(startTime, endTime, inviteCode, pageNum, pageSize, type));
+    }
+
+    @Override
+    public CommonResponse getUserState(Long uid) {
+        return executeSync(service.getUserState(uid));
+    }
+
     public CommonResponse executeSync(Call<CommonResponse> call) {
         try {
             Response<CommonResponse> response = call.execute();
