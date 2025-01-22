@@ -167,11 +167,23 @@ public class RestTest {
         String uri = "/v4/withdraw";
         Map<String, Object> param = new HashMap<>();
         param.put("chain", "Tron");
+        param.put("clientOrderId","1234");
         param.put("currency","USDT");
         param.put("amount",1000);
         param.put("address","xxxxx");
+        param.put("toAccountId",1234567L);
         System.out.println("json===="+ JSON.toJSONString(param));
         System.out.println("result====" + XtHttpUtil.post(uri,JSON.toJSONString(param)));
+    }
+
+    @Test
+    public void withdrawInfo() {
+        String uri = "/v4/withdraw";
+        Map<String, Object> param = new HashMap<>();
+        param.put("recordId", 123);
+        param.put("clientOrderId","1234");
+        System.out.println("json===="+ JSON.toJSONString(param));
+        System.out.println("result====" + XtHttpUtil.get(uri,param));
     }
 
     @Test
