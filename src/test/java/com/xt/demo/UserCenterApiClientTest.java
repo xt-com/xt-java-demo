@@ -29,13 +29,13 @@ public class UserCenterApiClientTest {
 
     @Test
     public void getBatchUserInfo(){
-        CommonResponse commonResponse = xtUserCenterApiClient.getBatchUserInfo(List.of(6975805522411L),1,5);
+        CommonResponse commonResponse = xtUserCenterApiClient.getBatchUserInfo(List.of(6975805522411L),1L,"NEXT", 20);
         System.out.println("result:"+commonResponse);
     }
 
     @Test
     public void getUserDetail(){
-        CommonResponse commonResponse = xtUserCenterApiClient.getUserDetail(1735574400000L,1735574400000L,"123",1,5,1);
+        CommonResponse commonResponse = xtUserCenterApiClient.getUserDetail(1735574400000L,1735574400000L,"123",1,1L,"NEXT", 20);
         System.out.println("result:"+commonResponse);
     }
 

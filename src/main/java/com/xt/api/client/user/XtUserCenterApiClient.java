@@ -15,9 +15,9 @@ public interface XtUserCenterApiClient {
 
     CommonResponse getUserInfo(Long uid);
 
-    CommonResponse getBatchUserInfo(List<Long> uidList, Integer pageNum, Integer pageSize);
+    CommonResponse getBatchUserInfo(List<Long> uidList, Long fromId, String direction, Integer limit);
 
-    CommonResponse getUserDetail(Long startTime, Long endTime, String inviteCode, Integer pageNum, Integer pageSize, Integer type);
+    CommonResponse getUserDetail(Long startTime, Long endTime, String inviteCode, Integer type, Long fromId, String direction, Integer limit);
 
     CommonResponse getUserState(Long uid);
 }

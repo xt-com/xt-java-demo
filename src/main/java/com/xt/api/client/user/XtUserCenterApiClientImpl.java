@@ -43,13 +43,13 @@ public class XtUserCenterApiClientImpl implements XtUserCenterApiClient {
     }
 
     @Override
-    public CommonResponse getBatchUserInfo(List<Long> uidList, Integer pageNum, Integer pageSize) {
-        return executeSync(service.getBatchUserInfo(uidList,pageNum,pageSize));
+    public CommonResponse getBatchUserInfo(List<Long> uidList, Long fromId, String direction, Integer limit) {
+        return executeSync(service.getBatchUserInfo(uidList, fromId, direction, limit));
     }
 
     @Override
-    public CommonResponse getUserDetail(Long startTime, Long endTime, String inviteCode, Integer pageNum, Integer pageSize, Integer type) {
-        return executeSync(service.getUserDetail(startTime, endTime, inviteCode, pageNum, pageSize, type));
+    public CommonResponse getUserDetail(Long startTime, Long endTime, String inviteCode, Integer type, Long fromId, String direction, Integer limit) {
+        return executeSync(service.getUserDetail(startTime, endTime, inviteCode, type, fromId, direction, limit));
     }
 
     @Override

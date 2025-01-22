@@ -20,12 +20,12 @@ public interface XtUserCenterApiService {
     @GET("/v4/referal/invite/single/user/info")
     Call<CommonResponse> getUserInfo(@Query("uid") Long uid);
 
-    @GET("/v4/referal/multi/single/user/info")
-    Call<CommonResponse> getBatchUserInfo(@Query("uidList") List<Long> uidList, @Query("pageNum") Integer pageNum, @Query("pageSize") Integer pageSize);
+    @GET("/v4/referal/invite/multi/user/info")
+    Call<CommonResponse> getBatchUserInfo(@Query("uidList") List<Long> uidList, @Query("fromId") Long fromId, @Query("direction") String direction, @Query("limit") Integer limit);
 
-    @GET("/v4/referal/multi/single/user/info")
+    @GET("/v4/referal/invite/agent/rebate/data")
     Call<CommonResponse> getUserDetail(@Query("startTime") Long startTime, @Query("endTime") Long endTime, @Query("inviteCode") String inviteCode,
-                                       @Query("pageNum") Integer pageNum, @Query("pageSize") Integer pageSize, @Query("type") Integer type);
+                                       @Query("type") Integer type, @Query("fromId") Long fromId, @Query("direction") String direction, @Query("limit") Integer limit);
 
     @GET("/v4/referal/invite/kyc/status")
     Call<CommonResponse> getUserState(@Query("uid") Long uid);
