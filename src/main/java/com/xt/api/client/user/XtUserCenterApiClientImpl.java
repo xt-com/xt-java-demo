@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class XtUserCenterApiClientImpl implements XtUserCenterApiClient {
 
-    private final static String API_URL = "http://api.xt-qa.com";
+    private final static String API_URL = "https://api.xt.com";
 
     private final XtUserCenterApiService service;
 
